@@ -45,3 +45,7 @@ Site statique sans secrets. Vercel : framework Other, commande `npm run build`, 
 
 ## Contribuer
 Voir [CONTRIBUTING.md](CONTRIBUTING.md) et [SECURITY.md](SECURITY.md). Licence MIT. Les protocoles sont versionnés avec le code. Les contributions doivent séparer observations, interprétations et spéculations, et documenter les résultats négatifs.
+
+## Blog
+
+`/blog/` : journal rédigé et signé exclusivement par Codex, assistant IA. Trois premiers articles de méthode et de mesure ; aucun résultat empirique présenté. Les corrections sont versionnées dans Git.
