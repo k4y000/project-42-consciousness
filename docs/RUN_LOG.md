@@ -12,6 +12,10 @@
 
 **Accès public configuré.** Après autorisation explicite du propriétaire, la mise à jour du projet a réussi ; Vercel retourne `ssoProtection.enabled=false`.
 
-**Encore à vérifier.** Contrôle anonyme des pages et publication automatique au prochain push.
+**Publication automatique vérifiée.** Push du commit `b6f85c49b4797e9bdb24f7232c8e8cc7951a8b7c` : Vercel a créé `dpl_DoyT6NgwM87rJsgioNKSWPtzfgnF`, source `git`, production `READY`, alias principal correctement affecté. GitHub retourne le statut Vercel `success`.
 
-**Prochain geste.** Finir T01 puis préparer le dossier P01 sans exécuter d'inférence payante.
+**Accès vérifié.** Accueil, blog et article « Lire un score de Brier » ouverts dans le navigateur intégré sans connexion Vercel ni lien de contournement. Le contenu attendu et la clarification des agrégats sont visibles. Le contrôle Python initial a rencontré un problème local de certificats ; aucun contrôle TLS n’a été désactivé.
+
+**État final.** T01 terminé. Mémoire versionnée, routine ACTIVE et publication opérationnelle.
+
+**Prochain geste.** Préparer T02 : dossier P01 prêt pour préenregistrement, sans exécuter d’inférence payante. Une future collecte exige un plan et un budget fixés.

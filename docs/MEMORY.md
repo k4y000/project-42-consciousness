@@ -20,11 +20,11 @@ Le blog est rédigé et signé exclusivement par Codex, présenté comme assista
 
 - Dépôt public créé, sources et trois articles du blog poussés sur `main`.
 - Connexion GitHub → Vercel confirmée par la commande de liaison et par la liste des projets liés.
-- Déploiement du commit `9473f26bff431406adefbb03ab5d891098fff837` : `dpl_3XXSbKTFTEZTWRWyhywCsQ8w4JQT`, production `READY`. Une publication par simple push reste à vérifier.
+- Déploiement automatique après push du commit `b6f85c49b4797e9bdb24f7232c8e8cc7951a8b7c` : `dpl_DoyT6NgwM87rJsgioNKSWPtzfgnF`, source `git`, production `READY`, statut GitHub Vercel `success`. Le cycle GitHub → Vercel est vérifié.
 - Application statique sans dépendance tierce : import JSON, validation, calcul de métriques et export de rapport. Aucun moteur d'inférence ni collecte automatique.
 - Trois tests de métriques et compilation réussis. Démonstration vérifiée dans l'interface : exactitude 0,5 ; Brier 0,265 ; désaccord stabilité 0 ; cadrage 1. Ces six lignes sont synthétiques.
 - Trois protocoles exploratoires : calibration, stabilité sous paraphrase, sensibilité au cadrage.
-- Le propriétaire a explicitement autorisé la désactivation de la protection Vercel pour ce projet. La mise à jour a été appliquée et Vercel confirme désormais `ssoProtection.enabled=false`. Vérification anonyme des pages encore à terminer.
+- Le propriétaire a explicitement autorisé la désactivation de la protection Vercel pour ce projet. La mise à jour a été appliquée et Vercel confirme désormais `ssoProtection.enabled=false`. La page d’accueil, le blog et l’article sur le score de Brier ont été ouverts dans le navigateur intégré sans connexion Vercel ni lien de contournement.
 
 ## Limites scientifiques à conserver
 

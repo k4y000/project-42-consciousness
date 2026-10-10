@@ -2,13 +2,13 @@
 
 Les tâches sont ordonnées. À chaque reprise, vérifier l'état puis prendre la première tâche utile et non bloquée. Une tâche terminée doit avoir une preuve dans le journal. Ne pas transformer cette liste en suite d'actions non bornée.
 
-## T01 — Continuité et accès public (en cours)
+## T01 — Continuité et accès public (terminé le 10 octobre 2026)
 
 - [x] Créer mémoire, consignes de reprise et journal dans le dépôt.
 - [x] Activer et vérifier une reprise quotidienne à 09:00 Europe/Paris dans le chat existant.
 - [x] Appliquer l'autorisation d'accès public au seul projet Vercel désigné.
-- [ ] Vérifier sans authentification la page d'accueil, le blog et un article.
-- [ ] Pousser ces fichiers et vérifier le déploiement déclenché par GitHub pour ce commit.
+- [x] Vérifier sans authentification la page d'accueil, le blog et un article.
+- [x] Pousser ces fichiers et vérifier le déploiement déclenché par GitHub pour ce commit.
 
 ## T02 — Pilote P01 prêt pour préenregistrement (à faire)
 
