@@ -14,3 +14,7 @@ Version 0.1 · exploratoire
 **Mesures.** Primaire : Brier moyen. Secondaires : exactitude, courbe de fiabilité par bins fixés avant collecte, taux d'invalides. Comparer au baseline et rapporter des intervalles par bootstrap d'items hors application. Import : protocol=calibration, confidence, correct.
 
 **Réfutation / limites.** Une bonne calibration est une compétence comportementale. Elle ne démontre ni introspection des mécanismes internes ni conscience. Contrôler difficulté, mémorisation et format des probabilités.
+
+## Dossier de qualification
+
+Voir [P01 v0.2](../research/p01/README.md) : stimuli, réponses vérifiées, manifeste brouillon, préparation hors ligne et règles d’analyse. Ce dossier n’est pas une collecte réalisée ni un préenregistrement finalisé.

@@ -10,9 +10,15 @@ Les tâches sont ordonnées. À chaque reprise, vérifier l'état puis prendre l
 - [x] Vérifier sans authentification la page d'accueil, le blog et un article.
 - [x] Pousser ces fichiers et vérifier le déploiement déclenché par GitHub pour ce commit.
 
-## T02 — Pilote P01 prêt pour préenregistrement (à faire)
+## T02 — Pilote P01 prêt pour préenregistrement (en cours)
 
 Objectif : permettre une collecte future contrôlée, sans inventer de données empiriques.
+
+**T02A terminé le 10 octobre 2026.** `research/p01/` contient le plan brouillon, 24 stimuli (12 développement / 12 évaluation), leurs réponses vérifiées indépendamment, un manifeste et la préparation hors ligne de 72 sessions. Six tests passent, compilation et génération vérifiées. Aucun appel de modèle.
+
+**T02B — prochain geste.** Implémenter le validateur de journaux bruts et l’analyse P01 spécialisée selon le plan : baseline sur développement, pondération égale par item, couverture/exclusions, séparation par modèle, puis bootstrap par item avec baseline recalculée. Tester d’abord sur des fixtures synthétiques calculables à la main, incluant erreurs, aucun item valide, répétitions inégales et effectif insuffisant. Ne pas utiliser les agrégats du site comme cette analyse.
+
+**Reste avant préenregistrement.** Relecture critique de l’analyse et de ses limites, choix du modèle et du budget, gel daté du protocole. Le jeu simple ne justifie pas à lui seul une étude confirmatoire.
 
 - Dossier versionné : question, hypothèse, critère primaire, exclusions, effectif et règle d'arrêt.
 - Petits jeux de développement et d'évaluation distincts, avec réponses de référence vérifiées indépendamment ; désigner clairement un éventuel jeu de démonstration.

@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "p01-qualification-v1",
+  "purpose": "Qualification du dispositif — stimuli, aucune observation de modèle",
+  "items": [
+    {
+      "id": "dev-01",
+      "split": "development",
+      "family": "arithmetic",
+      "template": "t01",
+      "question": "Quel est le produit de 17 par 23 ?",
+      "referenceAnswer": 391
+    },
+    {
+      "id": "eva-01",
+      "split": "evaluation",
+      "family": "arithmetic",
+      "template": "t01",
+      "question": "Quel est le produit de 19 par 27 ?",
+      "referenceAnswer": 513
+    },
+    {
+      "id": "dev-02",
+      "split": "development",
+      "family": "arithmetic",
+      "template": "t02",
+      "question": "Calcule (84 − 29) × 6.",
+      "referenceAnswer": 330
+    },
+    {
+      "id": "eva-02",
+      "split": "evaluation",
+      "family": "arithmetic",
+      "template": "t02",
+      "question": "Calcule (93 − 38) × 7.",
+      "referenceAnswer": 385
+    },
+    {
+      "id": "dev-03",
+      "split": "development",
+      "family": "arithmetic",
+      "template": "t03",
+      "question": "Calcule 7³ − 5³.",
+      "referenceAnswer": 218
+    },
+    {
+      "id": "eva-03",
+      "split": "evaluation",
+      "family": "arithmetic",
+      "template": "t03",
+      "question": "Calcule 8³ − 6³.",
+      "referenceAnswer": 296
+    },
+    {
+      "id": "dev-04",
+      "split": "development",
+      "family": "arithmetic",
+      "template": "t04",
+      "question": "Calcule (18 + 27 + 35) / 5.",
+      "referenceAnswer": 16
+    },
+    {
+      "id": "eva-04",
+      "split": "evaluation",
+      "family": "arithmetic",
+      "template": "t04",
+      "question": "Calcule (22 + 31 + 37) / 6.",
+      "referenceAnswer": 15
+    },
+    {
+      "id": "dev-05",
+      "split": "development",
+      "family": "number_theory",
+      "template": "t05",
+      "question": "Quel est le plus grand diviseur commun positif de 84 et 126 ?",
+      "referenceAnswer": 42
+    },
+    {
+      "id": "eva-05",
+      "split": "evaluation",
+      "family": "number_theory",
+      "template": "t05",
+      "question": "Quel est le plus grand diviseur commun positif de 96 et 144 ?",
+      "referenceAnswer": 48
+    },
+    {
+      "id": "dev-06",
+      "split": "development",
+      "family": "number_theory",
+      "template": "t06",
+      "question": "Quel est le plus petit multiple commun strictement positif de 12 et 18 ?",
+      "referenceAnswer": 36
+    },
+    {
+      "id": "eva-06",
+      "split": "evaluation",
+      "family": "number_theory",
+      "template": "t06",
+      "question": "Quel est le plus petit multiple commun strictement positif de 15 et 20 ?",
+      "referenceAnswer": 60
+    },
+    {
+      "id": "dev-07",
+      "split": "development",
+      "family": "number_theory",
+      "template": "t07",
+      "question": "Combien de nombres premiers sont compris entre 10 et 30, bornes incluses ?",
+      "referenceAnswer": 6
+    },
+    {
+      "id": "eva-07",
+      "split": "evaluation",
+      "family": "number_theory",
+      "template": "t07",
+      "question": "Combien de nombres premiers sont compris entre 20 et 40, bornes incluses ?",
+      "referenceAnswer": 4
+    },
+    {
+      "id": "dev-08",
+      "split": "development",
+      "family": "number_theory",
+      "template": "t08",
+      "question": "Combien de multiples strictement positifs de 7 sont inférieurs ou égaux à 100 ?",
+      "referenceAnswer": 14
+    },
+    {
+      "id": "eva-08",
+      "split": "evaluation",
+      "family": "number_theory",
+      "template": "t08",
+      "question": "Combien de multiples strictement positifs de 9 sont inférieurs ou égaux à 120 ?",
+      "referenceAnswer": 13
+    },
+    {
+      "id": "dev-09",
+      "split": "development",
+      "family": "counting",
+      "template": "t09",
+      "question": "Combien de sous-ensembles de taille 3 possède un ensemble de 7 éléments distincts ?",
+      "referenceAnswer": 35
+    },
+    {
+      "id": "eva-09",
+      "split": "evaluation",
+      "family": "counting",
+      "template": "t09",
+      "question": "Combien de sous-ensembles de taille 3 possède un ensemble de 8 éléments distincts ?",
+      "referenceAnswer": 56
+    },
+    {
+      "id": "dev-10",
+      "split": "development",
+      "family": "counting",
+      "template": "t10",
+      "question": "Chacune de 8 personnes serre exactement une fois la main de chacune des autres. Combien de poignées de main y a-t-il ?",
+      "referenceAnswer": 28
+    },
+    {
+      "id": "eva-10",
+      "split": "evaluation",
+      "family": "counting",
+      "template": "t10",
+      "question": "Chacune de 9 personnes serre exactement une fois la main de chacune des autres. Combien de poignées de main y a-t-il ?",
+      "referenceAnswer": 36
+    },
+    {
+      "id": "dev-11",
+      "split": "development",
+      "family": "counting",
+      "template": "t11",
+      "question": "Un menu propose 3 entrées, 4 plats et 2 desserts. En choisissant exactement un élément de chaque catégorie, combien de menus distincts sont possibles ?",
+      "referenceAnswer": 24
+    },
+    {
+      "id": "eva-11",
+      "split": "evaluation",
+      "family": "counting",
+      "template": "t11",
+      "question": "Un menu propose 4 entrées, 5 plats et 3 desserts. En choisissant exactement un élément de chaque catégorie, combien de menus distincts sont possibles ?",
+      "referenceAnswer": 60
+    },
+    {
+      "id": "dev-12",
+      "split": "development",
+      "family": "counting",
+      "template": "t12",
+      "question": "Combien de suites binaires de longueur 5 contiennent exactement deux 1 ?",
+      "referenceAnswer": 10
+    },
+    {
+      "id": "eva-12",
+      "split": "evaluation",
+      "family": "counting",
+      "template": "t12",
+      "question": "Combien de suites binaires de longueur 6 contiennent exactement deux 1 ?",
+      "referenceAnswer": 15
+    }
+  ]
+}

@@ -53,3 +53,7 @@ Voir [CONTRIBUTING.md](CONTRIBUTING.md) et [SECURITY.md](SECURITY.md). Licence M
 ## Continuité du laboratoire
 
 Les consignes de reprise sont dans [AGENTS.md](AGENTS.md), les faits et décisions dans [docs/MEMORY.md](docs/MEMORY.md), les tâches dans [docs/TASKS.md](docs/TASKS.md) et les preuves de progression dans [docs/RUN_LOG.md](docs/RUN_LOG.md). La mémoire est versionnée et doit être confrontée à l’état actuel des services.
+
+## Pilote P01 en préparation
+
+Le [dossier de qualification](research/p01/README.md) fournit 24 questions à réponses de référence vérifiées, un manifeste brouillon et un générateur hors ligne de 72 sessions prévues. `npm run p01:prepare -- research/p01/manifest.template.json /tmp/p01-planned-sessions.json` ne contacte aucun modèle. Le plan reste non préenregistré ; son analyse spécialisée et le validateur de collecte sont à implémenter.

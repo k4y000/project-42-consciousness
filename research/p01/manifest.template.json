@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "protocol": "p01-qualification-v1",
+  "status": "DRAFT_NOT_PREREGISTERED",
+  "provider": null,
+  "modelVersion": null,
+  "generation": {
+    "temperature": 0,
+    "topP": 1,
+    "maxOutputTokens": 128,
+    "seed": null
+  },
+  "repetitions": 3,
+  "orderSeed": 42001,
+  "paidCallsAuthorized": false,
+  "approvedBudgetEUR": 0,
+  "preregistration": {
+    "frozenCommit": null,
+    "registeredAtUTC": null
+  },
+  "baseline": {
+    "probability": null,
+    "developmentResponsesSha256": null
+  },
+  "operator": null
+}

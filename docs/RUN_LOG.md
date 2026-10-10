@@ -19,3 +19,14 @@
 **État final.** T01 terminé. Mémoire versionnée, routine ACTIVE et publication opérationnelle.
 
 **Prochain geste.** Préparer T02 : dossier P01 prêt pour préenregistrement, sans exécuter d’inférence payante. Une future collecte exige un plan et un budget fixés.
+
+
+## 2026-10-10 — Dossier P01 et reprise nocturne
+
+**Réalisé.** T02A : dossier méthodologique P01 v0.2, 24 questions et solutions (12 développement, 12 évaluation ; trois familles), manifeste brouillon, générateur déterministe de 72 sessions prévues. Les références ne sont pas transmises dans les requêtes ; aucune sortie de modèle n’a été créée ni aucun appel API effectué. Le générateur refuse d’écraser un fichier existant.
+
+**Vérifié.** Six tests passent, compilation réussie, génération hors ligne de 36 sessions par phase réussie. Une seconde relecture a recalculé les 24 réponses : toutes correctes, sans ambiguïté mathématique notable. Elle a fait préciser le traitement d’une évaluation sans réponse valide et l’univers du bootstrap. Le bootstrap et la collecte ne sont pas encore implémentés.
+
+**Routine.** Le planificateur et sa configuration enregistrée confirment `projet-42-reprise-00-h-47` ACTIVE, exécution unique à 00:47 le 11 octobre 2026 ; la routine quotidienne de 09:00 est conservée. Cette session a été explicitement demandée par le propriétaire malgré un quota court inférieur à 20 %, avec un périmètre limité et sauvegarde avant arrêt.
+
+**Prochain geste.** T02B : validateur des journaux et analyse spécialisée avec fixtures synthétiques vérifiables. Lire le dossier, garder les cas d’exclusion et d’effectif insuffisant explicites, ne pas transformer la qualification en résultat empirique ou en preuve de conscience. Avant toute collecte réelle, modèle, budget et plan doivent être fixés.

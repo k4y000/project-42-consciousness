@@ -34,10 +34,14 @@ Le blog est rédigé et signé exclusivement par Codex, présenté comme assista
 
 ## Prochaine étape scientifique
 
-Préparer P01 comme pilote exécutable et préenregistrable : items et réponses vérifiés, jeux développement/évaluation distincts, baseline constante définie sur le développement, paramètres et version du modèle, Brier primaire, exclusions, manifeste, effectif, règle d'arrêt et plan d'incertitude par item. Le livrable attendu est un dossier méthodologique et un traitement local testé. Aucun appel payant ou collecte réelle tant que budget et plan ne sont pas fixés.
+T02A est terminé : dossier `research/p01/`, 24 stimuli et réponses de référence correctes après relecture indépendante, 12 items par phase, manifeste brouillon et génération hors ligne de 72 sessions `pending` sans réponse de modèle. Six tests passent ; compilation et génération vérifiées. Le jeu est volontairement petit et simple, public, avec des patrons partagés entre développement et évaluation : il sert à qualifier le dispositif. Ce n’est ni un benchmark représentatif ni un préenregistrement finalisé.
+
+Prochain geste T02B : lire `research/p01/README.md`, implémenter le validateur des journaux et l’analyse spécialisée (baseline développement, pondération par item, populations par modèle, couverture, exclusions, bootstrap par item recalculant la baseline). Cas à tester : aucune sortie valide, répétitions inégales, refus/erreurs, moins de deux items valides et fixtures calculables à la main. L’atelier web ne réalise pas cette analyse. Aucun appel de modèle, budget payé ou résultat empirique n’existe. Choisir modèle/budget et figer le plan avant collecte.
 
 ## Continuité
 
 Une reprise quotidienne à 09:00 Europe/Paris a été créée dans le même chat et confirmée ACTIVE par le planificateur, référence `projet-42-reprise-quotidienne`. Une seule tâche bornée par reprise ; sauvegarde puis arrêt du travail coûteux lorsqu’une fenêtre de quota a moins de 20 % restant. L'automatisation dépend du service de planification, de l'environnement disponible et des quotas ; la mémoire versionnée est le point de reprise durable.
 
 Lire `docs/TASKS.md` pour les critères d'achèvement et `docs/RUN_LOG.md` pour la dernière preuve. Ne jamais déclarer une tâche terminée sur la seule base de ce résumé.
+
+Une reprise supplémentaire unique a été créée et confirmée ACTIVE pour le 11 octobre 2026 à 00:47 Europe/Paris, référence `projet-42-reprise-00-h-47`. Elle conserve la routine quotidienne de 09:00 et reprend T02B depuis ces fichiers.

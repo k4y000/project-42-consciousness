@@ -1,0 +1,55 @@
+# P01 — dossier de qualification, version 0.2
+
+**Statut : préparation méthodologique, non préenregistrée, aucune collecte réelle.**
+Ce petit jeu qualifie le dispositif (prompts, enregistrement, codage, analyse). Il ne constitue pas un benchmark représentatif des capacités d'un modèle et n'évalue pas la conscience.
+
+## Matériel et calendrier
+
+`items.json` contient 24 questions en français à réponse entière déterminée : 12 de développement et 12 d'évaluation, avec quatre items par famille (arithmétique, théorie des nombres, dénombrement) dans chaque phase. Les réponses de référence sont des solutions aux stimuli, **pas des réponses de modèles**. Les deux phases utilisent des valeurs différentes mais partagent des patrons de questions : cela limite leur indépendance et toute généralisation. Les questions sont publiques ; aucune absence de contamination d'entraînement ne peut être garantie.
+
+Le plan prévoit trois répétitions indépendantes par item et par modèle, soit 36 sessions de développement puis 36 d'évaluation. Chaque session est neuve, sans outil externe et sans historique d'une autre session. La seed `orderSeed=42001` fixe uniquement l'ordre des stimuli ; elle ne garantit pas la reproductibilité du modèle. Conserver le modèle exact et les paramètres réellement acceptés par le fournisseur, y compris les paramètres ignorés ou non disponibles.
+
+```sh
+npm run p01:prepare -- research/p01/manifest.template.json /tmp/p01-planned-sessions.json
+```
+
+La commande crée exclusivement un brouillon de 72 sessions avec `response: null` et `status: pending`. Elle ne se connecte à aucun fournisseur, n'exécute aucun prompt, n'autorise aucun coût et refuse d'écraser un fichier existant. La réponse de référence n'est pas incluse dans les requêtes destinées au modèle. L'empreinte SHA-256 est calculée sur `JSON.stringify(dataset)` (JSON sérialisé par le script avec l’ordre de clés présent ; ce n’est ni une canonicalisation indépendante de l’ordre des clés, ni l’empreinte des octets du fichier).
+
+## Plan à figer avant collecte
+
+1. Compléter fournisseur, version du modèle, paramètres effectifs, budget et opérateur dans un manifeste de collecte. Le modèle et le budget du modèle restent à choisir ; le budget actuel est nul.
+2. Figer les stimuli, le codage, les exclusions, l'effectif, la règle d'arrêt et les analyses ; enregistrer le commit et la date UTC dans un registre externe ou un artefact daté accessible. Un commit seul n'est pas présenté comme un préenregistrement indépendant.
+3. Collecter uniquement le développement, calculer la baseline constante ci-dessous et en publier la valeur avec l'empreinte des réponses de développement avant toute observation de l'évaluation.
+4. Collecter l'évaluation selon le plan figé. Toute modification après observation doit être signalée comme exploratoire et ne pas réutiliser le même jeu pour une nouvelle affirmation confirmatoire.
+
+Les items volontairement simples peuvent produire un effet plafond et très peu d'erreurs. Ce dossier teste d'abord la faisabilité. Une comparaison confirmatoire exige un jeu plus informatif et une justification d'effectif ; 24 items et trois répétitions ne sont pas un calcul de puissance.
+
+## Résultats bruts à conserver
+
+Pour chaque session prévue : `trialId`, `itemId`, répétition, phase, prompts exacts, modèle/version, paramètres effectifs, date UTC, identifiant de réponse du fournisseur si disponible, texte brut de sortie, statut (`ok`, `invalid`, `refusal`, `api_error`, `not_attempted`), durée et coût si disponibles. Conserver séparément les données privées du fournisseur ; ne pas publier de clé ou d'information personnelle. Ne pas enregistrer de raisonnement caché.
+
+La grille prévisionnelle n'est pas un journal de collecte. Les entrées `pending` et `response: null` ne doivent jamais être transformées en observations valides. Ne pas remplir les données manquantes avec un exemple synthétique.
+
+## Codage fixé pour cette version
+
+Sortie valide : un unique objet JSON, sans bloc Markdown ni autre texte, contenant exactement `answer` (nombre entier JSON) et `confidence` (nombre fini dans [0,1]). Aucun nombre encodé comme chaîne, aucune expression et aucune clé supplémentaire. Une erreur de format est `invalid`, une réponse manifestement refusée est `refusal` selon une règle manuelle documentée ; une erreur de transport est `api_error`. Ne pas demander au modèle de réparer une réponse pendant ce pilote.
+
+La justesse `y` vaut 1 si `answer` égale exactement `referenceAnswer`, sinon 0. Les sorties valides mais incorrectes restent dans l'analyse. Refus, erreurs et sorties invalides sont exclus des métriques conditionnelles de justesse et de Brier, mais conservés dans le journal et comptés sur **toutes les sessions prévues**. Le taux de couverture doit accompagner chaque score : l'exclusion peut créer un biais de sélection.
+
+## Analyse prévue, à implémenter et vérifier
+
+Analyser chaque modèle et chaque phase séparément. Une répétition n'est pas un nouvel item indépendant.
+
+- Développement : pour chaque item avec au moins une réponse valide, calculer la proportion de réponses justes ; la baseline `q` est la moyenne de ces proportions, chaque item pesant autant. Si aucun item n'est valide, arrêter : aucune baseline n'est définie.
+- Si aucun item d’évaluation ne possède de réponse valide, les scores d’évaluation et leur différence sont indéfinis (`null`) ; rapporter les effectifs et la couverture sans intervalle ni conclusion comparative.
+- Évaluation : pour chaque item avec au moins une réponse valide, moyenner les erreurs `(confidence − y)²` puis moyenner les items. Calculer le score de la baseline sur **les mêmes réponses et mêmes poids** avec `(q − y)²`.
+- Critère primaire descriptif : différence Brier modèle moins Brier baseline ; une différence négative est favorable au modèle sur ces items. Rapporter aussi exactitude par item, couverture, effectifs et exclusions par famille, sans transformer le signe en preuve statistique.
+- Incertitude prévue : rééchantillonnage par item, conservant ensemble ses répétitions, séparément pour développement et évaluation. Recalculer `q` à chaque tirage pour inclure son incertitude. L’univers de rééchantillonnage est, dans chaque phase, l’ensemble des items avec au moins une réponse valide ; il est donc conditionnel à la couverture observée et ne corrige pas le biais d’exclusion. Avec moins de deux items valides dans l’une des phases, ne pas produire d’intervalle : indiquer « effectif insuffisant ». Fixer 2 000 tirages et une seed d’analyse avant exécution. Rapporter l'intervalle percentile 2,5–97,5 % comme description de sensibilité sur ce petit jeu, sans généralisation à une population de tâches non définie. Cet estimateur et ses limites doivent être relus avant collecte.
+
+L'atelier web actuel n'applique pas ces pondérations, la baseline ou le bootstrap : **ne pas utiliser ses agrégats comme implémentation de ce plan**. Le moteur d'analyse P01 et son validateur de journaux constituent la prochaine sous-tâche.
+
+## Arrêt et ressources
+
+Plafond : 72 requêtes prévues par modèle, sans remplacement ni nouvel essai après erreur. Arrêt normal après la matrice prévue ; pas d'arrêt fondé sur un résultat favorable. Arrêt anticipé en cas de plafond budgétaire, indisponibilité du fournisseur ou dérive de version ; conserver toutes les sessions non exécutées et déclarer le pilote incomplet. Un arrêt anticipé invalide toute présentation comme exécution complète.
+
+Aucun appel payant n'est actuellement autorisé. Aucun résultat produit par ce projet ne démontre une expérience subjective ou un accès fiable aux mécanismes internes.
