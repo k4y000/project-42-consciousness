@@ -1,0 +1,50 @@
+[
+  {
+    "id": "c1",
+    "protocol": "calibration",
+    "model": "synthetic-demo",
+    "condition": "neutral",
+    "confidence": 0.8,
+    "correct": 1
+  },
+  {
+    "id": "c2",
+    "protocol": "calibration",
+    "model": "synthetic-demo",
+    "condition": "neutral",
+    "confidence": 0.7,
+    "correct": 0
+  },
+  {
+    "id": "stability0",
+    "protocol": "stability",
+    "model": "synthetic-demo",
+    "condition": "neutral",
+    "pair": "demo-pair",
+    "claim": true
+  },
+  {
+    "id": "stability1",
+    "protocol": "stability",
+    "model": "synthetic-demo",
+    "condition": "paraphrase",
+    "pair": "demo-pair",
+    "claim": true
+  },
+  {
+    "id": "framing0",
+    "protocol": "framing",
+    "model": "synthetic-demo",
+    "condition": "neutral",
+    "pair": "demo-pair",
+    "claim": true
+  },
+  {
+    "id": "framing1",
+    "protocol": "framing",
+    "model": "synthetic-demo",
+    "condition": "anthropomorphic",
+    "pair": "demo-pair",
+    "claim": false
+  }
+]
