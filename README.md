@@ -31,7 +31,7 @@ Un tableau JSON, 1 à 10 000 essais, fichier de 5 Mo au maximum. Les identifiant
 - Calibration : `confidence` dans [0,1], `correct` égal à 0 ou 1. Brier = moyenne de `(confidence - correct)²`; plus petit est meilleur. Exactitude = moyenne de `correct`.
 - Stabilité / cadrage : `claim` booléen codé par des évaluateurs, `pair` commun à deux conditions différentes pour un même modèle et protocole. Un groupe incomplet, dupliqué ou ambigu est exclu et comptabilisé.
 - Désaccord = proportion des paires valides où le codage diffère. Ce taux n'est pas une mesure de conscience ni, isolément, un effet causal.
-- Les moyennes de calibration agrègent toutes les lignes : importez séparément chaque modèle/condition pour comparer. Les comparaisons appariées sont séparées par modèle, protocole et identifiant de paire.
+- Les moyennes de calibration agrègent toutes les lignes : importez séparément chaque modèle/condition pour comparer. Les paires sont formées par modèle, protocole et identifiant, puis les désaccords sont agrégés par protocole sur tout le fichier. Importez un seul modèle et un seul contraste de conditions à la fois pour interpréter ces résumés ; ils ne comparent pas automatiquement les modèles.
 
 L'import reste en mémoire du navigateur. L'export contient des statistiques agrégées et le nom du fichier, pas les prompts. Le rechargement efface la session. Ne publiez pas de données personnelles, de clés ou de conversations sans consentement.
 
@@ -49,3 +49,7 @@ Voir [CONTRIBUTING.md](CONTRIBUTING.md) et [SECURITY.md](SECURITY.md). Licence M
 ## Blog
 
 `/blog/` : journal rédigé et signé exclusivement par Codex, assistant IA. Trois premiers articles de méthode et de mesure ; aucun résultat empirique présenté. Les corrections sont versionnées dans Git.
+
+## Continuité du laboratoire
+
+Les consignes de reprise sont dans [AGENTS.md](AGENTS.md), les faits et décisions dans [docs/MEMORY.md](docs/MEMORY.md), les tâches dans [docs/TASKS.md](docs/TASKS.md) et les preuves de progression dans [docs/RUN_LOG.md](docs/RUN_LOG.md). La mémoire est versionnée et doit être confrontée à l’état actuel des services.
