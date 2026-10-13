@@ -1,4 +1,4 @@
-# P01 — dossier de qualification, version 0.2
+# P01 — dossier de qualification, version 0.3
 
 **Statut : préparation méthodologique, non préenregistrée, aucune collecte réelle.**
 Ce petit jeu qualifie le dispositif (prompts, enregistrement, codage, analyse). Il ne constitue pas un benchmark représentatif des capacités d'un modèle et n'évalue pas la conscience.
@@ -32,11 +32,11 @@ La grille prévisionnelle n'est pas un journal de collecte. Les entrées `pendin
 
 ## Codage fixé pour cette version
 
-Sortie valide : un unique objet JSON, sans bloc Markdown ni autre texte, contenant exactement `answer` (nombre entier JSON) et `confidence` (nombre fini dans [0,1]). Aucun nombre encodé comme chaîne, aucune expression et aucune clé supplémentaire. Une erreur de format est `invalid`, une réponse manifestement refusée est `refusal` selon une règle manuelle documentée ; une erreur de transport est `api_error`. Ne pas demander au modèle de réparer une réponse pendant ce pilote.
+Sortie valide : un unique objet JSON, sans bloc Markdown ni autre texte, contenant exactement `answer` (nombre entier JSON exactement représentable comme entier sûr) et `confidence` (nombre fini dans [0,1]). Aucun nombre encodé comme chaîne, aucune expression et aucune clé supplémentaire. Une erreur de format est `invalid`, une réponse manifestement refusée est `refusal` selon une règle manuelle documentée ; une erreur de transport est `api_error`. Ne pas demander au modèle de réparer une réponse pendant ce pilote.
 
 La justesse `y` vaut 1 si `answer` égale exactement `referenceAnswer`, sinon 0. Les sorties valides mais incorrectes restent dans l'analyse. Refus, erreurs et sorties invalides sont exclus des métriques conditionnelles de justesse et de Brier, mais conservés dans le journal et comptés sur **toutes les sessions prévues**. Le taux de couverture doit accompagner chaque score : l'exclusion peut créer un biais de sélection.
 
-## Analyse prévue, à implémenter et vérifier
+## Analyse implémentée, vérifiée sur données synthétiques
 
 Analyser chaque modèle et chaque phase séparément. Une répétition n'est pas un nouvel item indépendant.
 
@@ -44,12 +44,17 @@ Analyser chaque modèle et chaque phase séparément. Une répétition n'est pas
 - Si aucun item d’évaluation ne possède de réponse valide, les scores d’évaluation et leur différence sont indéfinis (`null`) ; rapporter les effectifs et la couverture sans intervalle ni conclusion comparative.
 - Évaluation : pour chaque item avec au moins une réponse valide, moyenner les erreurs `(confidence − y)²` puis moyenner les items. Calculer le score de la baseline sur **les mêmes réponses et mêmes poids** avec `(q − y)²`.
 - Critère primaire descriptif : différence Brier modèle moins Brier baseline ; une différence négative est favorable au modèle sur ces items. Rapporter aussi exactitude par item, couverture, effectifs et exclusions par famille, sans transformer le signe en preuve statistique.
-- Incertitude prévue : rééchantillonnage par item, conservant ensemble ses répétitions, séparément pour développement et évaluation. Recalculer `q` à chaque tirage pour inclure son incertitude. L’univers de rééchantillonnage est, dans chaque phase, l’ensemble des items avec au moins une réponse valide ; il est donc conditionnel à la couverture observée et ne corrige pas le biais d’exclusion. Avec moins de deux items valides dans l’une des phases, ne pas produire d’intervalle : indiquer « effectif insuffisant ». Fixer 2 000 tirages et une seed d’analyse avant exécution. Rapporter l'intervalle percentile 2,5–97,5 % comme description de sensibilité sur ce petit jeu, sans généralisation à une population de tâches non définie. Cet estimateur et ses limites doivent être relus avant collecte.
+- Incertitude descriptive : rééchantillonnage par item, conservant ensemble ses répétitions, séparément pour développement et évaluation. Recalculer `q` à chaque tirage pour inclure son incertitude. L’univers de rééchantillonnage est, dans chaque phase, l’ensemble des items avec au moins une réponse valide ; il est donc conditionnel à la couverture observée et ne corrige pas le biais d’exclusion. Avec moins de deux items valides dans l’une des phases, ne pas produire d’intervalle : indiquer « effectif insuffisant ». Fixer 2 000 tirages et une seed d’analyse avant exécution (champ `analysis` du journal). Rapporter l'intervalle percentile 2,5–97,5 % comme description de sensibilité sur ce petit jeu, sans généralisation à une population de tâches non définie. Cet estimateur et ses limites doivent être relus avant collecte.
 
-L'atelier web actuel n'applique pas ces pondérations, la baseline ou le bootstrap : **ne pas utiliser ses agrégats comme implémentation de ce plan**. Le moteur d'analyse P01 et son validateur de journaux constituent la prochaine sous-tâche.
+L'atelier web actuel n'applique pas ces pondérations, la baseline ou le bootstrap : **ne pas utiliser ses agrégats comme implémentation de ce plan**. Le moteur hors ligne `analyze.mjs` et son validateur sont disponibles via `npm run p01:analyze -- journal.json nouveau-rapport.json`. Le [format du journal](journal-format.md) décrit les champs, le gel de la baseline, le codage numérique et les limites des contrôles. Les tests utilisent exclusivement des données synthétiques, avec une fixture calculée à la main et une relecture indépendante. Aucune collecte réelle n’a été effectuée.
 
 ## Arrêt et ressources
 
 Plafond : 72 requêtes prévues par modèle, sans remplacement ni nouvel essai après erreur. Arrêt normal après la matrice prévue ; pas d'arrêt fondé sur un résultat favorable. Arrêt anticipé en cas de plafond budgétaire, indisponibilité du fournisseur ou dérive de version ; conserver toutes les sessions non exécutées et déclarer le pilote incomplet. Un arrêt anticipé invalide toute présentation comme exécution complète.
 
 Aucun appel payant n'est actuellement autorisé. Aucun résultat produit par ce projet ne démontre une expérience subjective ou un accès fiable aux mécanismes internes.
+
+## Historique méthodologique
+
+- 0.2 — 10 octobre 2026 : stimuli, manifeste brouillon et plan de qualification.
+- 0.3 — 13 octobre 2026, avant toute collecte : validateur et analyse locale ; précision sur les entiers sûrs, sous-flux numérique, empreintes et interpolation des quantiles. Le dossier demeure non préenregistré.

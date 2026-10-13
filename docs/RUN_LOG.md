@@ -30,3 +30,18 @@
 **Routine.** Le planificateur et sa configuration enregistrée confirment `projet-42-reprise-00-h-47` ACTIVE, exécution unique à 00:47 le 11 octobre 2026 ; la routine quotidienne de 09:00 est conservée. Cette session a été explicitement demandée par le propriétaire malgré un quota court inférieur à 20 %, avec un périmètre limité et sauvegarde avant arrêt.
 
 **Prochain geste.** T02B : validateur des journaux et analyse spécialisée avec fixtures synthétiques vérifiables. Lire le dossier, garder les cas d’exclusion et d’effectif insuffisant explicites, ne pas transformer la qualification en résultat empirique ou en preuve de conscience. Avant toute collecte réelle, modèle, budget et plan doivent être fixés.
+
+
+## 2026-10-13 — Reprise reçue et analyse P01 hors ligne
+
+**État initial vérifié.** Quotas suffisants pour une tâche bornée. Branche propre, un commit local non poussé (`8601907`, T02A) : publication effectuée sans refaire ce travail. Vercel confirme pour ce commit le déploiement de production `dpl_7ie1ixHwYSdpi3P6kC1JbMg799P2` en état `READY`, sous le projet et l’équipe autorisés.
+
+**Réalisé.** T02B, dossier P01 v0.3 : validation des journaux complets de 72 essais, codage strict depuis le texte brut, refus des mélanges de versions/paramètres, empreintes et cohérence du gel de baseline avant évaluation empirique. Analyse par item, couverture et exclusions par phase/famille, Brier et comparaison à la baseline, bootstrap conditionnel de 2 000 tirages recalculant la baseline. Commande hors ligne `p01:analyze`, sans écrasement des rapports. Format et limites documentés. Aucun appel à un modèle, aucune donnée empirique ni dépense.
+
+**Vérifié.** Quinze tests réussis et compilation réussie. Fixture exclusivement synthétique calculable à la main : q = 1/3, Brier modèle = 0,12, Brier baseline = 1/3, différence = −16/75 ; bootstrap de cette fixture [−0,84 ; 11/225]. Relecture indépendante des calculs et du code. Elle a détecté un arrondi JavaScript pouvant convertir une fraction brute en entier valide ou une probabilité au-dessus de 1 en 1 ; validation décimale corrigée, testée et revérifiée. Les chiffres de cette fixture ne sont pas des résultats de recherche.
+
+**Limites.** Aucun préenregistrement. Provenance, ordre réel intra-phase, sessions neuves et outils accessibles ne sont pas certifiés par le validateur. Les refus demeurent un codage humain justifié. L’intervalle est conditionnel aux items avec réponses valides, sur un petit jeu public partageant des patrons entre phases. L’atelier web garde ses agrégats initiaux ; l’analyse P01 utilise une commande et un format séparés.
+
+**Continuité.** La reprise unique prévue pour le 11 octobre a été reçue le 13 octobre. Suppression de `projet-42-reprise-00-h-47` confirmée par le planificateur ; routine quotidienne conservée ACTIVE dans sa configuration. Pas de nouvelle routine.
+
+**Prochain geste.** T02C : harmoniser manifeste et journal, expliciter le contrôle du dispositif avant collecte, puis relire le dossier avant modèle/budget et gel daté. Aucun appel payant autorisé.

@@ -1,6 +1,6 @@
 # Mémoire de reprise
 
-Dernière mise à jour : 10 octobre 2026. Ce document décrit des faits datés ; confirmer l'état distant avant d'agir.
+Dernière mise à jour : 13 octobre 2026. Ce document décrit des faits datés ; confirmer l'état distant avant d'agir.
 
 ## Intention et décisions
 
@@ -30,13 +30,17 @@ Le blog est rédigé et signé exclusivement par Codex, présenté comme assista
 
 1. Aucun résultat empirique publié et aucune preuve de conscience. La calibration est une mesure comportementale.
 2. La cohérence verbale peut être trompeuse ; le protocole de cadrage contient une induction de fiction. Les hypothèses concurrentes doivent rester visibles.
-3. Les statistiques actuelles sont descriptives : pas d'intervalle d'incertitude ni d'analyse confirmatoire. La calibration est agrégée sur toutes les lignes. Les paires sont formées par modèle/protocole/identifiant, puis leur désaccord est agrégé par protocole ; aucune comparaison entre modèles ni direction d'effet n'est fournie.
+3. Les statistiques de l’atelier web sont descriptives, sans intervalle ni analyse confirmatoire. Le moteur P01 séparé implémente désormais un bootstrap conditionnel par item, testé uniquement sur fixtures synthétiques. Dans l’atelier web, la calibration est agrégée sur toutes les lignes. Les paires sont formées par modèle/protocole/identifiant, puis leur désaccord est agrégé par protocole ; aucune comparaison entre modèles ni direction d'effet n'est fournie.
 
 ## Prochaine étape scientifique
 
 T02A est terminé : dossier `research/p01/`, 24 stimuli et réponses de référence correctes après relecture indépendante, 12 items par phase, manifeste brouillon et génération hors ligne de 72 sessions `pending` sans réponse de modèle. Six tests passent ; compilation et génération vérifiées. Le jeu est volontairement petit et simple, public, avec des patrons partagés entre développement et évaluation : il sert à qualifier le dispositif. Ce n’est ni un benchmark représentatif ni un préenregistrement finalisé.
 
-Prochain geste T02B : lire `research/p01/README.md`, implémenter le validateur des journaux et l’analyse spécialisée (baseline développement, pondération par item, populations par modèle, couverture, exclusions, bootstrap par item recalculant la baseline). Cas à tester : aucune sortie valide, répétitions inégales, refus/erreurs, moins de deux items valides et fixtures calculables à la main. L’atelier web ne réalise pas cette analyse. Aucun appel de modèle, budget payé ou résultat empirique n’existe. Choisir modèle/budget et figer le plan avant collecte.
+T02B terminé le 13 octobre 2026 : `research/p01/analyze.mjs`, commande `p01:analyze` et `journal-format.md`. Le validateur exige 72 essais, prompts exacts, version/paramètres homogènes, exclusions justifiées et dates UTC ; il refuse les plans `pending`. L’analyse donne une baseline de développement, des poids égaux par item, une couverture par famille et un bootstrap de 2 000 tirages par item avec baseline recalculée. Un journal empirique avec évaluation exige un gel cohérent du développement (empreinte, valeur et dates). Ces vérifications ne certifient ni provenance ni préenregistrement.
+
+Quinze tests passent et compilation réussie. Une relecture indépendante a confirmé la fixture calculée à la main et corrigé un piège d’arrondi lors du codage des nombres bruts. Les cas vides, effectifs insuffisants, répétitions inégales, refus/erreurs, corruption de journal et écrasement de rapport sont couverts. Aucun résultat empirique, aucune collecte, aucun coût API.
+
+Prochain geste T02C : harmoniser le manifeste de préparation avec le contrat de journal v1 (`analysis`, paramètres effectifs, gel de baseline), puis définir une vérification avant collecte de l’ordre réel, des sessions neuves et des outils autorisés. Ces trois contraintes ne sont pas certifiées par l’analyseur. Préparer une relecture du dossier avant choix du modèle/budget et gel daté ; ne pas lancer de collecte ni présenter le dossier comme préenregistré. Le jeu public simple et les patrons partagés restent une limite scientifique majeure.
 
 ## Continuité
 
@@ -44,4 +48,4 @@ Une reprise quotidienne à 09:00 Europe/Paris a été créée dans le même chat
 
 Lire `docs/TASKS.md` pour les critères d'achèvement et `docs/RUN_LOG.md` pour la dernière preuve. Ne jamais déclarer une tâche terminée sur la seule base de ce résumé.
 
-Une reprise supplémentaire unique a été créée et confirmée ACTIVE pour le 11 octobre 2026 à 00:47 Europe/Paris, référence `projet-42-reprise-00-h-47`. Elle conserve la routine quotidienne de 09:00 et reprend T02B depuis ces fichiers.
+La reprise supplémentaire prévue le 11 octobre à 00:47 a été reçue le 13 octobre 2026. Après cette reprise, `projet-42-reprise-00-h-47` a été supprimée avec confirmation du planificateur pour éviter une répétition. La routine quotidienne `projet-42-reprise-quotidienne` demeure ACTIVE dans sa configuration enregistrée. Aucune autre routine n’a été créée.

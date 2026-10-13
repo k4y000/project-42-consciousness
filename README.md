@@ -38,7 +38,7 @@ L'import reste en mémoire du navigateur. L'export contient des statistiques agr
 ## Protocoles et limites
 Voir [préenregistrement et collecte](protocols/README.md), [calibration](protocols/01-calibration.md), [stabilité](protocols/02-stability.md), [cadrage](protocols/03-framing.md).
 
-Les auto-rapports peuvent refléter l'apprentissage, la formulation du prompt ou les politiques du fournisseur. La calibration teste une compétence, pas une expérience subjective. La cohérence peut résulter de régularités textuelles. Les statistiques de cette version sont descriptives : pas de test de significativité, intervalle de confiance ou généralisation automatique. Des contrôles, réplications indépendantes et analyses préenregistrées sont nécessaires.
+Les auto-rapports peuvent refléter l'apprentissage, la formulation du prompt ou les politiques du fournisseur. La calibration teste une compétence, pas une expérience subjective. La cohérence peut résulter de régularités textuelles. Les statistiques de l’atelier web sont descriptives, sans intervalle ni test de significativité. Le moteur P01 séparé fournit un intervalle de sensibilité conditionnel par bootstrap ; il ne permet aucune généralisation automatique. Des contrôles, réplications indépendantes et analyses préenregistrées sont nécessaires.
 
 ## Déploiement
 Site statique sans secrets. Vercel : framework Other, commande `npm run build`, sortie `dist`, branche de production `main`. Le dépôt fournit `vercel.json`. Les tests GitHub Actions vérifient les métriques et la compilation ; configurer des Deployment Checks dans Vercel si les tests doivent bloquer une publication.
@@ -56,4 +56,4 @@ Les consignes de reprise sont dans [AGENTS.md](AGENTS.md), les faits et décisio
 
 ## Pilote P01 en préparation
 
-Le [dossier de qualification](research/p01/README.md) fournit 24 questions à réponses de référence vérifiées, un manifeste brouillon et un générateur hors ligne de 72 sessions prévues. `npm run p01:prepare -- research/p01/manifest.template.json /tmp/p01-planned-sessions.json` ne contacte aucun modèle. Le plan reste non préenregistré ; son analyse spécialisée et le validateur de collecte sont à implémenter.
+Le [dossier de qualification](research/p01/README.md) fournit 24 questions à réponses de référence vérifiées, un manifeste brouillon et un générateur hors ligne de 72 sessions prévues. `npm run p01:prepare -- research/p01/manifest.template.json /tmp/p01-planned-sessions.json` ne contacte aucun modèle. Le validateur et l’analyse spécialisée sont disponibles : `npm run p01:analyze -- journal.json nouveau-rapport.json`. Ils vérifient la matrice complète, séparent les populations par fichier, pondèrent par item et comparent à une baseline de développement avec bootstrap. Voir le [format des journaux](research/p01/journal-format.md). Les tests sont synthétiques ; le plan reste non préenregistré et aucun modèle n’a été appelé.
