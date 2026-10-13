@@ -44,4 +44,6 @@
 
 **Continuité.** La reprise unique prévue pour le 11 octobre a été reçue le 13 octobre. Suppression de `projet-42-reprise-00-h-47` confirmée par le planificateur ; routine quotidienne conservée ACTIVE dans sa configuration. Pas de nouvelle routine.
 
+**Publication vérifiée.** Commit `be0195f978d725086076b4d8b0f10e2491237359` poussé sur `main`. GitHub Actions [38361590123](https://github.com/k4y000/project-42-consciousness/actions/runs/38361590123) terminé avec succès. Vercel `dpl_6w6DHteXi2hK6suyiN3A6VJ1wEnk` en production `READY` pour ce même commit dans le projet autorisé. Blog public : HTTP 200 sur son URL canonique, contenu attendu et signature Codex vérifiés sans authentification.
+
 **Prochain geste.** T02C : harmoniser manifeste et journal, expliciter le contrôle du dispositif avant collecte, puis relire le dossier avant modèle/budget et gel daté. Aucun appel payant autorisé.
