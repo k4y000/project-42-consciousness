@@ -4,12 +4,7 @@
   "status": "DRAFT_NOT_PREREGISTERED",
   "provider": null,
   "modelVersion": null,
-  "generation": {
-    "temperature": 0,
-    "topP": 1,
-    "maxOutputTokens": 128,
-    "seed": null
-  },
+  "generation": null,
   "repetitions": 3,
   "orderSeed": 42001,
   "paidCallsAuthorized": false,
@@ -18,9 +13,25 @@
     "frozenCommit": null,
     "registeredAtUTC": null
   },
-  "baseline": {
-    "probability": null,
-    "developmentResponsesSha256": null
+  "operator": null,
+  "runId": null,
+  "dataKind": null,
+  "condition": "neutral-no-tools",
+  "requestedGeneration": {
+    "temperature": 0,
+    "topP": 1,
+    "maxOutputTokens": 128,
+    "seed": null
   },
-  "operator": null
+  "analysis": {
+    "seed": 42002,
+    "draws": 2000
+  },
+  "baselineFreeze": null,
+  "collectionControls": {
+    "freshSessionPerTrial": true,
+    "toolsEnabled": false,
+    "followPlannedOrder": true,
+    "retryFailedTrials": false
+  }
 }

@@ -12,6 +12,8 @@ Le journal est un objet JSON pour **un seul fournisseur, une version exacte de m
 
 Le format d'import du site web est différent. Une grille `p01:prepare` avec des essais `pending` n'est pas un journal, et est rejetée. Le [générateur de fixture](../../fixtures/p01-synthetic.mjs) est réservé aux tests synthétiques ; il ne doit jamais servir à compléter des observations manquantes.
 
+Pour initialiser ce format à partir d’un manifeste complété, voir [le raccord et les contrôles avant collecte](precollection.md). `p01:journal` produit exclusivement des essais `not_attempted`, puis vérifie le format avec le même validateur.
+
 ## Champs à la racine
 
 Tous les champs ci-dessous sont obligatoires ; les champs supplémentaires sont refusés.

@@ -47,3 +47,16 @@
 **Publication vérifiée.** Commit `be0195f978d725086076b4d8b0f10e2491237359` poussé sur `main`. GitHub Actions [38361590123](https://github.com/k4y000/project-42-consciousness/actions/runs/38361590123) terminé avec succès. Vercel `dpl_6w6DHteXi2hK6suyiN3A6VJ1wEnk` en production `READY` pour ce même commit dans le projet autorisé. Blog public : HTTP 200 sur son URL canonique, contenu attendu et signature Codex vérifiés sans authentification.
 
 **Prochain geste.** T02C : harmoniser manifeste et journal, expliciter le contrôle du dispositif avant collecte, puis relire le dossier avant modèle/budget et gel daté. Aucun appel payant autorisé.
+
+
+## 2026-10-13 — Reprise quotidienne : manifeste et contrôles avant collecte
+
+**État initial.** T02B et sa mémoire déjà publiés ; branche propre et synchronisée au commit `fcf61ed`. Vérification des quotas avant travail ; périmètre limité à T02C, puis sauvegarde à l’approche du seuil de réserve. Aucun travail T02B répété.
+
+**Réalisé.** Dossier v0.4 : réglages demandés/effectifs séparés, analyse et gel alignés sur le journal v1. Commande `p01:journal` et module séparé initialisant 72 essais `not_attempted` sans observation, en conservant l’ordre préparé. Refus du manifeste incomplet, de l’ancien champ de gel ambigu, d’un gel existant et de l’écrasement. Le générateur de grille et le schéma du journal v1 restent compatibles. Contrat de qualification du futur dispositif documenté, avec traces pour ordre, sessions neuves, outils, retries, arrêt et gel.
+
+**Vérifié.** Dix-huit tests réussis et compilation réussie. Tests nouveaux : round-trip du journal vide vers l’analyseur (couverture nulle et comparaison indéfinie), transfert des réglages effectifs distincts des souhaits, ordre déterministe, refus des brouillons incomplets/incompatibles, absence d’écrasement et de mutation partagée. Relecture indépendante du raccord et de la documentation sans défaut bloquant. Pas d’inférence, de collecte ou de dépense.
+
+**Limites.** Aucun préenregistrement. Les contrôles effectifs du fournisseur exigent un adaptateur à qualifier ; l’initialiseur vérifie un format, pas une exécution réelle. La validité scientifique du petit jeu public doit encore être relue. La routine quotidienne est conservée.
+
+**Prochain geste.** T02D : revue critique bornée sur trois sources primaires vérifiées, avant modèle/budget, qualification d’adaptateur et gel. Sauvegarder les corrections et les incertitudes ; ne pas collecter.

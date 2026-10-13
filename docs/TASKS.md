@@ -18,7 +18,9 @@ Objectif : permettre une collecte future contrôlée, sans inventer de données 
 
 **T02B terminé le 13 octobre 2026.** Validateur des 72 essais bruts, analyse séparée par fichier modèle/condition, baseline et Brier pondérés par item, couverture/exclusions par famille, bootstrap par item recalculant la baseline. Quinze tests passent, dont une fixture indépendante, les populations vides et les exclusions ; relecture du code et du codage numérique terminée. Interface hors ligne et format de journal documentés. Aucune collecte réelle.
 
-**T02C — prochain geste.** Harmoniser le manifeste brouillon et le contrat de journal v1 (seed d’analyse, paramètres effectifs, champ de gel et empreinte). Définir le contrôle avant collecte de l’ordre des sessions, de l’absence d’historique et des outils ; ces contraintes restent hors des garanties de l’analyseur. Relire le dossier avant choix du modèle/budget et gel externe daté. Ne pas collecter pour tester cette préparation.
+**T02C terminé le 13 octobre 2026.** Manifeste v0.4, distinction réglages demandés/effectifs, correspondance des champs d’analyse et de gel, initialisation hors ligne d’un journal v1 vide et contrat des contrôles avant collecte. Dix-huit tests passent, compilation et relecture indépendante réussies. L’initialiseur ne certifie pas les contrôles d’exécution ; aucun adaptateur fournisseur n’existe.
+
+**T02D — prochain geste.** Relecture méthodologique courte sur trois sources primaires vérifiées : calibration déclarée, sélection des réponses valides, dépendance entre patrons d’items. Identifier les corrections nécessaires au dossier avant gel et consigner ce qui reste incertain. Cette première revue prépare T03 ; aucune collecte ni dépense.
 
 **Reste avant préenregistrement.** Relecture critique de l’analyse et de ses limites, choix du modèle et du budget, gel daté du protocole. Le jeu simple ne justifie pas à lui seul une étude confirmatoire.
 

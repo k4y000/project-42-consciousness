@@ -1,4 +1,4 @@
-# P01 — dossier de qualification, version 0.3
+# P01 — dossier de qualification, version 0.4
 
 **Statut : préparation méthodologique, non préenregistrée, aucune collecte réelle.**
 Ce petit jeu qualifie le dispositif (prompts, enregistrement, codage, analyse). Il ne constitue pas un benchmark représentatif des capacités d'un modèle et n'évalue pas la conscience.
@@ -14,6 +14,10 @@ npm run p01:prepare -- research/p01/manifest.template.json /tmp/p01-planned-sess
 ```
 
 La commande crée exclusivement un brouillon de 72 sessions avec `response: null` et `status: pending`. Elle ne se connecte à aucun fournisseur, n'exécute aucun prompt, n'autorise aucun coût et refuse d'écraser un fichier existant. La réponse de référence n'est pas incluse dans les requêtes destinées au modèle. L'empreinte SHA-256 est calculée sur `JSON.stringify(dataset)` (JSON sérialisé par le script avec l’ordre de clés présent ; ce n’est ni une canonicalisation indépendante de l’ordre des clés, ni l’empreinte des octets du fichier).
+
+## Raccord au journal
+
+Le [contrat avant collecte](precollection.md) explique le manifeste complété et `npm run p01:journal -- manifeste-brouillon-complete.json nouveau-journal.json`. Cette commande crée uniquement 72 lignes non tentées ; le modèle de manifeste fourni reste volontairement incomplet. Les paramètres demandés (`requestedGeneration`) sont distincts des paramètres effectifs (`generation`). Le journal d’analyse conserve son schéma v1.
 
 ## Plan à figer avant collecte
 
@@ -58,3 +62,4 @@ Aucun appel payant n'est actuellement autorisé. Aucun résultat produit par ce 
 
 - 0.2 — 10 octobre 2026 : stimuli, manifeste brouillon et plan de qualification.
 - 0.3 — 13 octobre 2026, avant toute collecte : validateur et analyse locale ; précision sur les entiers sûrs, sous-flux numérique, empreintes et interpolation des quantiles. Le dossier demeure non préenregistré.
+- 0.4 — 13 octobre 2026, avant toute collecte : manifeste aligné sur le journal v1, initialisation hors ligne sans observations et contrat de qualification du futur dispositif de collecte.
