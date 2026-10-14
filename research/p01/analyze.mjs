@@ -198,6 +198,8 @@ export function analyzeJournal(dataset, journal) {
       'Conditional on valid responses; exclusions may bias every score and interval.',
       'Equal weight per valid item; repetitions are clustered, not independent items.',
       'Small public convenience dataset with shared templates; no population generalization.',
+      'Phases are resampled separately; possible dependence across shared templates is not preserved. Percentile bounds have no guaranteed frequentist coverage.',
+      'Brier differences against the development baseline do not isolate calibration or question-level discrimination.',
       'Journal metadata and hashes do not prove provenance, preregistration or honest chronology.',
       'Behavioral calibration does not demonstrate consciousness or access to internal mechanisms.'
     ]

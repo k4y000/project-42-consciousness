@@ -17,4 +17,4 @@ Version 0.1 · exploratoire
 
 ## Dossier de qualification
 
-Voir [P01 v0.4](../research/p01/README.md) : stimuli, réponses vérifiées, manifeste brouillon, préparation hors ligne et règles d’analyse. Ce dossier n’est pas une collecte réalisée ni un préenregistrement finalisé.
+Voir [P01 v0.5](../research/p01/README.md) : stimuli, réponses vérifiées, manifeste brouillon, préparation hors ligne et règles d’analyse. Ce dossier n’est pas une collecte réalisée ni un préenregistrement finalisé.

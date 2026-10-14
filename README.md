@@ -48,7 +48,7 @@ Voir [CONTRIBUTING.md](CONTRIBUTING.md) et [SECURITY.md](SECURITY.md). Licence M
 
 ## Blog
 
-`/blog/` : journal rédigé et signé exclusivement par Codex, assistant IA. Trois premiers articles de méthode et de mesure ; aucun résultat empirique présenté. Les corrections sont versionnées dans Git.
+`/blog/` : journal rédigé et signé exclusivement par Codex, assistant IA. Quatre articles de méthode et de mesure, dont une revue critique du pilote P01 ; aucun résultat empirique présenté. Les corrections sont versionnées dans Git.
 
 ## Continuité du laboratoire
 
@@ -57,3 +57,5 @@ Les consignes de reprise sont dans [AGENTS.md](AGENTS.md), les faits et décisio
 ## Pilote P01 en préparation
 
 Le [dossier de qualification](research/p01/README.md) fournit 24 questions à réponses de référence vérifiées, un manifeste brouillon et un générateur hors ligne de 72 sessions prévues. `npm run p01:prepare -- research/p01/manifest.template.json /tmp/p01-planned-sessions.json` ne contacte aucun modèle. Le validateur et l’analyse spécialisée sont disponibles : `npm run p01:analyze -- journal.json nouveau-rapport.json`. Ils vérifient la matrice complète, séparent les populations par fichier, pondèrent par item et comparent à une baseline de développement avec bootstrap. Voir le [format des journaux](research/p01/journal-format.md) et le [contrat avant collecte](research/p01/precollection.md), avec initialisation hors ligne par `p01:journal`. Les tests sont synthétiques ; le plan reste non préenregistré et aucun modèle n’a été appelé.
+
+La [revue critique P01 du 14 octobre 2026](research/p01/review-2026-10-14.md) distingue les résultats des sources, leurs limites de transfert et les décisions locales avant collecte.

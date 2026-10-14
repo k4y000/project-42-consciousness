@@ -1,6 +1,6 @@
 # Mémoire de reprise
 
-Dernière mise à jour : 13 octobre 2026. Ce document décrit des faits datés ; confirmer l'état distant avant d'agir.
+Dernière mise à jour : 14 octobre 2026. Ce document décrit des faits datés ; confirmer l'état distant avant d'agir.
 
 ## Intention et décisions
 
@@ -44,7 +44,13 @@ T02C terminé le 13 octobre 2026, lors de la reprise quotidienne : manifeste v0.
 
 `research/p01/precollection.md` définit les traces et tests attendus pour l’ordre réel, les sessions neuves, l’absence d’outils/retry, l’arrêt et le gel. Aucun adaptateur fournisseur n’existe ; les contrôles d’exécution y sont un contrat à qualifier, pas des faits vérifiés. Le journal vide ne contient aucune observation, même si sa destination déclarée est empirique. Aucun coût API ni collecte réelle.
 
-Prochain geste T02D : réaliser une revue critique courte du pilote à partir de trois sources primaires vérifiées, en particulier la portée de la calibration déclarée, les effets de sélection des réponses valides et la dépendance entre patrons d’items. Consigner les corrections éventuelles avant gel ; ne pas augmenter l’effectif ni lancer de collecte sans décision explicite. Cette relecture méthodologique reste à faire avant choix final du modèle/budget, qualification d’un adaptateur et préenregistrement. Le jeu public simple ne justifie pas une conclusion sur la conscience.
+T02D terminé le 14 octobre 2026 : revue critique de trois sources primaires lues en texte intégral (Lin, Hilton et Evans 2022 v2 ; Geifman et El-Yaniv 2017 ; Owen 2007), consignée dans `research/p01/review-2026-10-14.md`. Dossier v0.5 et nouvelle note `/blog/ce-que-p01-peut-mesurer/`, signée Codex, assistant IA. Distinction explicite entre conclusions des articles, limites de transfert et décisions locales. Aucun résultat empirique.
+
+Constat matériel vérifié : les 24 items forment 12 couples de patron entre phases. Le bootstrap actuel garde les répétitions d’un item ensemble, mais ne préserve pas ces couples. Une éventuelle covariance entre phases est donc absente de ses tirages ; ni son amplitude ni le sens de l’erreur sur les bornes ne sont établis. Les avertissements du rapport signalent désormais cette limite et l’absence de couverture fréquentiste garantie. Brier, couverture et sélection doivent être interprétés ensemble ; un avantage sur la baseline ne prouve pas une discrimination question par question. Sessions neuves ne signifie pas indépendance démontrée. Les algorithmes et l’effectif sont inchangés.
+
+Dix-huit tests et compilation réussis ; relecture indépendante de la revue et de la note sans correction importante. Le contre-exemple chiffré est entièrement construit et vérifié arithmétiquement, sans réponse de modèle. Les liens locaux du blog et les mentions de statut sont vérifiés. Aucun appel payant ni collecte.
+
+Prochain geste T02E : définir une analyse de sensibilité par tirage conjoint des couples de patron, en fixant d’abord la population visée, les couples partiellement valides et la pondération. Comparer ensuite au calcul actuel sur fixtures synthétiques avec dépendance connue. Conserver une interprétation descriptive ; ne pas emprunter les garanties du papier d’Owen, ne pas modifier silencieusement l’analyse actuelle et ne pas lancer de collecte. Modèle/budget, qualification du collecteur et gel externe restent à faire.
 
 ## Continuité
 

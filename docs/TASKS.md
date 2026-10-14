@@ -20,7 +20,9 @@ Objectif : permettre une collecte future contrôlée, sans inventer de données 
 
 **T02C terminé le 13 octobre 2026.** Manifeste v0.4, distinction réglages demandés/effectifs, correspondance des champs d’analyse et de gel, initialisation hors ligne d’un journal v1 vide et contrat des contrôles avant collecte. Dix-huit tests passent, compilation et relecture indépendante réussies. L’initialiseur ne certifie pas les contrôles d’exécution ; aucun adaptateur fournisseur n’existe.
 
-**T02D — prochain geste.** Relecture méthodologique courte sur trois sources primaires vérifiées : calibration déclarée, sélection des réponses valides, dépendance entre patrons d’items. Identifier les corrections nécessaires au dossier avant gel et consigner ce qui reste incertain. Cette première revue prépare T03 ; aucune collecte ni dépense.
+**T02D terminé le 14 octobre 2026.** Trois sources primaires vérifiées, revue critique datée et note de blog. Dossier v0.5 : portée du Brier, sélection des réponses valides et dépendance éventuelle entre phases précisées ; avertissements du rapport enrichis. Douze couples de patron confirmés dans le jeu. Aucune nouvelle observation ni modification des algorithmes. Dix-huit tests et compilation réussis ; relecture indépendante des conclusions et du contre-exemple.
+
+**T02E — prochain geste.** Spécifier une sensibilité conservant les couples de patron entre phases : population, exclusions des couples incomplets, poids. La qualifier ensuite sur fixtures synthétiques avec dépendance connue et comparer au bootstrap actuel. Aucun transfert automatique des garanties d’Owen ; pas de collecte ni d’augmentation d’effectif.
 
 **Reste avant préenregistrement.** Relecture critique de l’analyse et de ses limites, choix du modèle et du budget, gel daté du protocole. Le jeu simple ne justifie pas à lui seul une étude confirmatoire.
 
@@ -33,7 +35,7 @@ Objectif : permettre une collecte future contrôlée, sans inventer de données 
 
 Achevé lorsque le dossier est utilisable et relu, les calculs vérifiés et les limites explicites. Le statut restera « préparation méthodologique » tant qu'aucune collecte autorisée n'a eu lieu.
 
-## T03 — Revue critique documentée (à faire après T02)
+## T03 — Revue critique documentée (amorcée par T02D ; extension après T02)
 
 Lire un petit ensemble de sources primaires pertinentes, vérifier dates et contenu, puis examiner les explications concurrentes et les insuffisances du protocole. Conserver les références, les incertitudes et les résultats négatifs. Réviser le plan avant collecte si nécessaire.
 

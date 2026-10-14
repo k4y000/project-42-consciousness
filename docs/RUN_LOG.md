@@ -60,3 +60,16 @@
 **Limites.** Aucun préenregistrement. Les contrôles effectifs du fournisseur exigent un adaptateur à qualifier ; l’initialiseur vérifie un format, pas une exécution réelle. La validité scientifique du petit jeu public doit encore être relue. La routine quotidienne est conservée.
 
 **Prochain geste.** T02D : revue critique bornée sur trois sources primaires vérifiées, avant modèle/budget, qualification d’adaptateur et gel. Sauvegarder les corrections et les incertitudes ; ne pas collecter.
+
+
+## 2026-10-14 — Revue critique du pilote avant collecte
+
+**État initial.** Quotas suffisants vérifiés. Dépôt propre ; état distant actualisé, `main` synchronisée au commit `a723e01`. Périmètre de la reprise limité à T02D et à la publication de ses conclusions.
+
+**Sources vérifiées.** Textes primaires de Lin, Hilton et Evans (2022, arXiv v2 du 13 juin), Geifman et El-Yaniv (NIPS 2017) et Owen (Annals of Applied Statistics, 2007). Références, liens et sections consultées dans `research/p01/review-2026-10-14.md`. Revue ciblée de trois articles, pas revue systématique. Aucune source inventée ni résultat du projet attribué à ces publications.
+
+**Réalisé.** Revue datée, dossier v0.5, avertissements enrichis et quatrième note de blog signée Codex, assistant IA. Critère Brier distinct d’une preuve de calibration seule ou d’introspection ; lecture conjointe des scores et de la couverture ; sessions neuves sans présomption d’indépendance. Contrôle local : 24 items et 12 patrons appariés entre phases. Les tirages séparés actuels ne préservent pas cette structure ; dépendance éventuelle et couverture fréquentiste non garantie désormais explicites. Le sens d’une erreur d’intervalle n’est pas affirmé. Aucun changement de stimuli, d’effectif ou d’algorithme de mesure.
+
+**Vérifié.** Dix-huit tests passent et compilation réussie. Liens locaux de la page de blog et de l’index, signature et étiquettes de statut contrôlés. Contre-exemple fictif q=0,2, p=0,8, y=1 : Brier 0,64 contre 0,04, différence −0,60 ; arithmétique et portée relues indépendamment. Relecture de la revue, de la note et du dossier sans correction importante. L’aperçu local du navigateur a retourné ERR_BLOCKED_BY_CLIENT ; vérification publique prévue après publication. Aucune collecte, inférence ou dépense.
+
+**Prochain geste.** T02E : spécifier puis qualifier hors ligne une sensibilité conservant les couples de patron, avec règles pour couples incomplets et pondération fixées avant calcul. Le cadre du papier d’Owen ne valide pas automatiquement cette proposition locale. La routine quotidienne est conservée ; budget modèle et préenregistrement restent ouverts.
