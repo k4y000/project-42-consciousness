@@ -1,6 +1,6 @@
 # Mémoire de reprise
 
-Dernière mise à jour : 14 octobre 2026. Ce document décrit des faits datés ; confirmer l'état distant avant d'agir.
+Dernière mise à jour : 16 octobre 2026. Ce document décrit des faits datés ; confirmer l'état distant avant d'agir.
 
 ## Intention et décisions
 
@@ -50,7 +50,11 @@ Constat matériel vérifié : les 24 items forment 12 couples de patron entre ph
 
 Dix-huit tests et compilation réussis ; relecture indépendante de la revue et de la note sans correction importante. Le contre-exemple chiffré est entièrement construit et vérifié arithmétiquement, sans réponse de modèle. Les liens locaux du blog et les mentions de statut sont vérifiés. Publication du commit `1404d36` confirmée : GitHub Actions réussi, Vercel READY, article et navigation depuis l’index contrôlés dans le navigateur public sans authentification. Aucun appel payant ni collecte.
 
-Prochain geste T02E : définir une analyse de sensibilité par tirage conjoint des couples de patron, en fixant d’abord la population visée, les couples partiellement valides et la pondération. Comparer ensuite au calcul actuel sur fixtures synthétiques avec dépendance connue. Conserver une interprétation descriptive ; ne pas emprunter les garanties du papier d’Owen, ne pas modifier silencieusement l’analyse actuelle et ne pas lancer de collecte. Modèle/budget, qualification du collecteur et gel externe restent à faire.
+T02E implémenté le 16 octobre 2026 : dossier v0.6 et commande hors ligne `p01:sensitivity`. Le rapport séparé conserve l'analyse principale. Couples éligibles : au moins une réponse valide par item dans les deux phases ; motifs d'exclusion et poids égaux par couple après moyennes intra-item explicites. Baseline du sous-ensemble réajustée, distincte du gel avant évaluation. Tirages conjoints et indépendants sur exactement le même sous-ensemble ; contrôle de la bijection des patrons et de leur famille. Aucune borne avec moins de deux couples, aucune garantie de couverture ou de généralisation.
+
+Vérification locale : 24 tests et compilation réussis ; relecture indépendante du code et de la spécification sans problème important. Deux fixtures à association positive/négative ont des bornes calculées indépendamment ; répétitions inégales, couples incomplets, structures ambiguës, déterminisme et refus d'écrasement sont couverts. Données synthétiques, aucun appel de modèle ni coût API. Publication distante à confirmer.
+
+Prochain geste T02F : audit final borné du dossier avant préenregistrement et fiche des décisions ouvertes (modèle/version, budget, qualification du collecteur, gel externe). Vérifier la correspondance spécifications/commandes/critères T02 ; garder les limites non résolues, sans ajouter automatiquement une analyse ni lancer de collecte. Aucun adaptateur fournisseur qualifié n'existe.
 
 ## Continuité
 

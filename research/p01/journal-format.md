@@ -1,5 +1,7 @@
 # Journal P01 v1 et analyse locale
 
+Le même journal peut alimenter l'[analyse de sensibilité par couples de patron](template-sensitivity.md) avec `npm run p01:sensitivity -- journal.json nouveau-rapport-sensibilite.json`. Son rapport séparé conserve l'analyse principale et distingue explicitement la baseline gelée de celle réajustée au sous-ensemble éligible. Le schéma du journal reste v1.
+
 Statut du dossier : **préparation méthodologique**, sans collecte réelle ni préenregistrement. Le validateur contrôle un format et des cohérences ; il ne certifie pas la provenance des réponses ou la sincérité des dates déclarées.
 
 ## Utilisation

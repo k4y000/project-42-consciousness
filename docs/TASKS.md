@@ -22,7 +22,9 @@ Objectif : permettre une collecte future contrôlée, sans inventer de données 
 
 **T02D terminé le 14 octobre 2026.** Trois sources primaires vérifiées, revue critique datée et note de blog. Dossier v0.5 : portée du Brier, sélection des réponses valides et dépendance éventuelle entre phases précisées ; avertissements du rapport enrichis. Douze couples de patron confirmés dans le jeu. Aucune nouvelle observation ni modification des algorithmes. Dix-huit tests et compilation réussis ; relecture indépendante des conclusions et du contre-exemple.
 
-**T02E — prochain geste.** Spécifier une sensibilité conservant les couples de patron entre phases : population, exclusions des couples incomplets, poids. La qualifier ensuite sur fixtures synthétiques avec dépendance connue et comparer au bootstrap actuel. Aucun transfert automatique des garanties d’Owen ; pas de collecte ni d’augmentation d’effectif.
+**T02E implémenté le 16 octobre 2026.** Sensibilité séparée par couples de patron ; population, exclusions et pondération explicites. Tirages conjoints et indépendants sur le même sous-ensemble, baseline réajustée distincte du gel principal. Vingt-quatre tests, compilation et relecture indépendante réussis. Aucune collecte, aucun changement d'effectif ni garantie de couverture. Publication distante à vérifier.
+
+**T02F — prochain geste.** Audit final borné du dossier avant préenregistrement : vérifier la correspondance spécifications/commandes/critères T02 et consigner les décisions ouvertes (modèle/version, budget, qualification du collecteur, gel externe). Ne pas ajouter automatiquement d'analyse ; aucune collecte sans conditions fixées.
 
 **Reste avant préenregistrement.** Relecture critique de l’analyse et de ses limites, choix du modèle et du budget, gel daté du protocole. Le jeu simple ne justifie pas à lui seul une étude confirmatoire.
 

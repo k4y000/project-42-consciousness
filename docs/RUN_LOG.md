@@ -75,3 +75,16 @@
 **Prochain geste.** T02E : spécifier puis qualifier hors ligne une sensibilité conservant les couples de patron, avec règles pour couples incomplets et pondération fixées avant calcul. Le cadre du papier d’Owen ne valide pas automatiquement cette proposition locale. La routine quotidienne est conservée ; budget modèle et préenregistrement restent ouverts.
 
 **Publication et arrêt vérifiés.** Commit `1404d36ee1173bdd67264ca2953d0b274effa972` publié ; [contrôles GitHub 38641549047](https://github.com/k4y000/project-42-consciousness/actions/runs/38641549047) réussis. Production Vercel `dpl_BDjo6LBshEadn4LrnQGfAiKNTseU` READY dans la cible autorisée. Article public ouvert, lisibilité contrôlée et navigation index → article vérifiée sans authentification. Quota court passé sous le seuil de réserve en fin de session : uniquement sauvegarde finale, aucune nouvelle tâche lancée. Prochaine étape T02E conservée.
+
+
+## 2026-10-16 — Sensibilité aux couples de patron
+
+**État initial.** Quotas suffisants pour une tâche bornée. Branche propre, synchronisation distante vérifiée à `da03985`. Cible Vercel et équipe autorisées confirmées, protections d'accès désactivées. Reprise limitée à T02E.
+
+**Réalisé.** Dossier v0.6, spécification conditionnelle et commande séparée `p01:sensitivity`. Sélection des couples ayant une réponse valide dans chaque phase, poids égaux après moyennes intra-item, baseline réajustée distinguée du gel principal. Comparaison des tirages conjoints et indépendants sur le même sous-ensemble. Rapport principal conservé sans changement de son calcul ; contrôle des couples ambigus et de leur famille ; motifs d'exclusion et effectifs explicites. Aucun intervalle avec moins de deux couples.
+
+**Vérifié.** Vingt-quatre tests et compilation réussis. Deux fixtures construites : mêmes scores ponctuels (q=0,5, Brier modèle et baseline=0,25, différence=0), mais bornes conjointes [0 ; 0,25] pour association positive et [−0,75 ; 0] pour association négative ; bornes indépendantes [−0,75 ; 0,25] dans les deux cas. Calculs énumérés indépendamment, puis code et spécification relus sans problème important. Répétitions inégales, couples incomplets, schémas invalides, déterminisme et écrasement testés. Aucun appel de modèle, aucune observation empirique ni dépense.
+
+**Limites.** La sélection dépend de la validité observée dans les deux phases ; sa baseline réajustée n'est pas celle gelée avant évaluation. Le bootstrap ne corrige pas les exclusions et n'apporte aucune garantie de couverture fréquentiste, d'indépendance des patrons ou de généralisation. Aucun changement des stimuli, de l'effectif ou de l'atelier web ; pas de nouvel article de blog pour cette étape technique.
+
+**Prochain geste.** T02F : audit final borné du dossier et fiche des décisions ouvertes avant préenregistrement (modèle/version, budget, qualification du collecteur, gel externe). Routine quotidienne conservée. Publication distante de T02E à confirmer.

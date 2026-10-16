@@ -176,6 +176,9 @@ function bootstrap(development, evaluation, settings) {
   return { ...base, draws: settings.draws, reason: null, lower: quantile(0.025), upper: quantile(0.975) };
 }
 
+// Reused unchanged by the separate template-pair sensitivity analysis.
+export { bootstrap as bootstrapIndependentItems };
+
 export function analyzeJournal(dataset, journal) {
   validateJournal(dataset, journal);
   const development = phaseSummary(dataset, journal.trials, 'development');

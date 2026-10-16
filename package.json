@@ -9,7 +9,8 @@
     "start": "node scripts/serve.mjs",
     "p01:prepare": "node scripts/prepare-p01.mjs",
     "p01:analyze": "node scripts/analyze-p01.mjs",
-    "p01:journal": "node scripts/initialize-p01.mjs"
+    "p01:journal": "node scripts/initialize-p01.mjs",
+    "p01:sensitivity": "node scripts/sensitivity-p01.mjs"
   },
   "engines": {
     "node": ">=22"
