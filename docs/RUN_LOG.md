@@ -87,4 +87,6 @@
 
 **Limites.** La sélection dépend de la validité observée dans les deux phases ; sa baseline réajustée n'est pas celle gelée avant évaluation. Le bootstrap ne corrige pas les exclusions et n'apporte aucune garantie de couverture fréquentiste, d'indépendance des patrons ou de généralisation. Aucun changement des stimuli, de l'effectif ou de l'atelier web ; pas de nouvel article de blog pour cette étape technique.
 
-**Prochain geste.** T02F : audit final borné du dossier et fiche des décisions ouvertes avant préenregistrement (modèle/version, budget, qualification du collecteur, gel externe). Routine quotidienne conservée. Publication distante de T02E à confirmer.
+**Prochain geste.** T02F : audit final borné du dossier et fiche des décisions ouvertes avant préenregistrement (modèle/version, budget, qualification du collecteur, gel externe). Routine quotidienne conservée.
+
+**Publication vérifiée.** Commit `2bbce900728681eff3b0beeb4b470c2d72929f45` poussé sur `main` ; [contrôles GitHub 38933957065](https://github.com/k4y000/project-42-consciousness/actions/runs/38933957065) terminés avec succès. Production Vercel `dpl_6zM7omFRub3nBGQ9msPTiRuG6Vf7` READY pour ce même commit dans le seul projet et l'équipe autorisés. Aucun changement de route ou d'interface ; pas de nouveau contrôle visuel requis. Mémoire, tâches et preuve de publication sauvegardées ; prochain geste T02F.
