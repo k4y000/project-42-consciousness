@@ -24,7 +24,7 @@ Objectif : permettre une collecte future contrôlée, sans inventer de données 
 
 **T02E terminé le 16 octobre 2026.** Sensibilité séparée par couples de patron ; population, exclusions et pondération explicites. Tirages conjoints et indépendants sur le même sous-ensemble, baseline réajustée distincte du gel principal. Vingt-quatre tests, compilation et relecture indépendante réussis. Aucune collecte, aucun changement d'effectif ni garantie de couverture. Publication GitHub et production Vercel vérifiées au commit `2bbce90` ; preuves dans le journal.
 
-**T02F terminé localement le 27 octobre 2026.** Audit et fiche de décisions dans `research/p01/readiness-2026-10-27.md`, dossier v0.7 et spécification faisant foi clarifiée. Garde A01 manquante reproduite : gel/évaluation acceptés malgré développement incomplet. Les 24 tests existants passent ; ils ne couvrent pas cette garde. Aucune collecte ni changement d'algorithme. Publication à vérifier.
+**T02F terminé le 27 octobre 2026.** Audit et fiche de décisions dans `research/p01/readiness-2026-10-27.md`, dossier v0.7 et spécification faisant foi clarifiée. Garde A01 manquante reproduite : gel/évaluation acceptés malgré développement incomplet. Les 24 tests existants passent ; ils ne couvrent pas cette garde. Aucune collecte ni changement d'algorithme. Relecture et liens vérifiés ; publication GitHub/Vercel confirmée au commit `3b1485b`, preuves dans le journal.
 
 **T02G — prochain geste.** Corriger et tester uniquement A01 : développement entièrement tenté et baseline définie avant gel ou évaluation empiriques, tout en conservant l'analyse d'un journal interrompu sans gel ni évaluation. Distinguer tentative et réponse valide ; préserver les calculs et contrôles existants. Aucun appel de modèle.
 

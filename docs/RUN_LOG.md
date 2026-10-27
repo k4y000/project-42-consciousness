@@ -102,4 +102,6 @@
 
 **Décisions ouvertes.** Modèle/version et réglages effectifs, règle des refus ambigus, ressources et opérateur, qualification du collecteur/arrêts et deux gels distincts. Pas de collecte autorisée par la seule réussite d'une commande.
 
-**Prochain geste.** T02G : corriger et tester la garde A01 sans modifier les calculs ; préserver l'analyse des journaux interrompus et distinguer essais tentés/réponses valides. Routine quotidienne conservée. Publication de l'audit à vérifier.
+**Prochain geste.** T02G : corriger et tester la garde A01 sans modifier les calculs ; préserver l'analyse des journaux interrompus et distinguer essais tentés/réponses valides. Routine quotidienne conservée.
+
+**Publication vérifiée.** Audit relu indépendamment et 58 liens relatifs résolus. Commit `3b1485baa9de28570b47dbdd4ca90673ec2d632e` publié ; [contrôles GitHub 40579846248](https://github.com/k4y000/project-42-consciousness/actions/runs/40579846248) réussis. Production Vercel `dpl_CEFX7zzQFyGxEP5mJ179ZJ4SRpkK` READY pour ce commit dans le projet et l'équipe autorisés. Modification documentaire uniquement, aucune route modifiée. Mémoire et prochain geste T02G sauvegardés ; A01 demeure explicitement non corrigé.
