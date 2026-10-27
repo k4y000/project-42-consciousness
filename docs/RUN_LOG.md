@@ -90,3 +90,16 @@
 **Prochain geste.** T02F : audit final borné du dossier et fiche des décisions ouvertes avant préenregistrement (modèle/version, budget, qualification du collecteur, gel externe). Routine quotidienne conservée.
 
 **Publication vérifiée.** Commit `2bbce900728681eff3b0beeb4b470c2d72929f45` poussé sur `main` ; [contrôles GitHub 38933957065](https://github.com/k4y000/project-42-consciousness/actions/runs/38933957065) terminés avec succès. Production Vercel `dpl_6zM7omFRub3nBGQ9msPTiRuG6Vf7` READY pour ce même commit dans le seul projet et l'équipe autorisés. Aucun changement de route ou d'interface ; pas de nouveau contrôle visuel requis. Mémoire, tâches et preuve de publication sauvegardées ; prochain geste T02F.
+
+
+## 2026-10-27 — Audit de préparation P01
+
+**État initial.** Quotas suffisants pour une tâche bornée. Dépôt propre et synchronisé après vérification distante au commit `8f600e2`. Cible Vercel et équipe autorisées confirmées ; production existante READY, protections d'accès désactivées. Reprise limitée à T02F.
+
+**Réalisé.** Audit daté avec tableau exigences/preuves, fiche des décisions ouvertes et verdict explicite : pas encore prêt pour préenregistrement final ni collecte. Dossier v0.7 : question, attente directionnelle descriptive et hiérarchie documentaire clarifiées ; protocole générique v0.1 identifié comme cadrage historique. Aucun changement des calculs, stimuli, effectif, site ou blog.
+
+**Constat vérifié.** Relecture indépendante puis reproduction locale d'A01 : un journal construit uniquement en mémoire avec 35 essais de développement non tentés, un gel cohérent et une évaluation tentée est accepté. Cela contrevient au contrat de développement achevé avant gel/évaluation. Vingt-quatre tests existants passent encore : la garde manque à leur couverture. Aucune donnée empirique, aucun appel de modèle ni dépense. Les documents décrivent le défaut comme non corrigé.
+
+**Décisions ouvertes.** Modèle/version et réglages effectifs, règle des refus ambigus, ressources et opérateur, qualification du collecteur/arrêts et deux gels distincts. Pas de collecte autorisée par la seule réussite d'une commande.
+
+**Prochain geste.** T02G : corriger et tester la garde A01 sans modifier les calculs ; préserver l'analyse des journaux interrompus et distinguer essais tentés/réponses valides. Routine quotidienne conservée. Publication de l'audit à vérifier.

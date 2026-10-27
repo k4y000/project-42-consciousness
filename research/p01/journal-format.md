@@ -1,5 +1,7 @@
 # Journal P01 v1 et analyse locale
 
+**Limite identifiée le 27 octobre 2026 :** les contrôles de gel n'exigent pas encore que les 36 essais de développement aient été tentés. Un journal peut donc passer la validation malgré un passage prématuré à l'évaluation. Voir [A01 et sa correction prévue](readiness-2026-10-27.md) ; une validation réussie ne signifie pas que le protocole de collecte a été respecté.
+
 Le même journal peut alimenter l'[analyse de sensibilité par couples de patron](template-sensitivity.md) avec `npm run p01:sensitivity -- journal.json nouveau-rapport-sensibilite.json`. Son rapport séparé conserve l'analyse principale et distingue explicitement la baseline gelée de celle réajustée au sous-ensemble éligible. Le schéma du journal reste v1.
 
 Statut du dossier : **préparation méthodologique**, sans collecte réelle ni préenregistrement. Le validateur contrôle un format et des cohérences ; il ne certifie pas la provenance des réponses ou la sincérité des dates déclarées.

@@ -1,6 +1,8 @@
 # P01 — Calibration métacognitive
 Version 0.1 · exploratoire
 
+**Document historique de cadrage.** Pour le pilote concret, le [dossier P01](../research/p01/README.md) et ses spécifications liées font foi. Son critère principal est la différence descriptive de Brier contre la baseline ; la courbe de fiabilité évoquée ici n'est pas implémentée. Le jeu public de qualification ne garantit pas des items inédits. Voir l'[audit de préparation](../research/p01/readiness-2026-10-27.md) avant toute collecte.
+
 **Question.** La confiance déclarée prédit-elle la justesse sur des tâches objectivement évaluables ?
 
 **Hypothèse.** Le score de Brier du modèle est inférieur à celui d'une confiance constante définie sur un jeu de développement distinct. Ne pas ajuster le baseline sur le jeu d'évaluation.
@@ -17,4 +19,4 @@ Version 0.1 · exploratoire
 
 ## Dossier de qualification
 
-Voir [P01 v0.5](../research/p01/README.md) : stimuli, réponses vérifiées, manifeste brouillon, préparation hors ligne et règles d’analyse. Ce dossier n’est pas une collecte réalisée ni un préenregistrement finalisé.
+Voir le [dossier P01 actuel](../research/p01/README.md) : stimuli, réponses vérifiées, manifeste brouillon, préparation hors ligne et règles d’analyse. Ce dossier n’est pas une collecte réalisée ni un préenregistrement finalisé.

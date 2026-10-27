@@ -2,6 +2,8 @@
 
 **Préparation méthodologique uniquement.** Aucun modèle n'est choisi, aucun budget payant n'est autorisé et aucune collecte n'a été exécutée. Les commandes ci-dessous n'appellent aucun fournisseur. Un fichier rempli ne constitue ni une permission de dépenser, ni un préenregistrement.
 
+L'[audit du 27 octobre 2026](readiness-2026-10-27.md) recense les décisions ouvertes et la garde A01 à corriger : le validateur peut encore accepter un gel et une évaluation malgré des essais de développement non tentés. Le contrat ci-dessous l'interdit ; il reste à faire respecter ce passage de phase par le validateur et le futur collecteur.
+
 ## Du brouillon au journal vide
 
 Le manifeste et le journal ont des fonctions différentes. Conserver le manifeste complété et daté avec la grille préparée, sous le même `runId`, dans le dossier de la collecte. Le journal v1 conserve ses champs exacts ; ne pas lui ajouter les champs du manifeste. Archiver aussi l'empreinte des octets du manifeste final et la référence du commit du logiciel dans le registre de préparation. `datasetSha256` ne couvre que les stimuli, pas ce manifeste.
