@@ -146,6 +146,12 @@ test('rejects invalid observation timestamps, costs, durations and claimed valid
 
 test('empirical branch enforces frozen baseline value, development hash and phase chronology using synthetic test inputs', () => {
   const journal = handCalculatedJournal();
+  // Construct attempted exclusions for the remaining development trials.
+  // This keeps the independently calculated q=1/3 and completes the phase.
+  for (const row of journal.trials.filter(row => row.split === 'development' && row.status === 'not_attempted')) {
+    Object.assign(row, { status: 'api_error', statusReason: 'Synthetic test transport error.',
+      startedAtUTC: '2026-01-01T10:00:00.000Z', endedAtUTC: '2026-01-01T10:00:01.000Z' });
+  }
   journal.dataKind = 'empirical'; // Testing validation only; never written as empirical data.
   assert.throws(() => validateJournal(dataset, journal), /requires a frozen/);
   journal.baselineFreeze = { probability: 1 / 3, developmentSha256: developmentHash(journal.trials), frozenAtUTC: '2026-01-01T11:00:00.000Z' };

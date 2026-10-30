@@ -1,6 +1,6 @@
 # Journal P01 v1 et analyse locale
 
-**Limite identifiée le 27 octobre 2026 :** les contrôles de gel n'exigent pas encore que les 36 essais de développement aient été tentés. Un journal peut donc passer la validation malgré un passage prématuré à l'évaluation. Voir [A01 et sa correction prévue](readiness-2026-10-27.md) ; une validation réussie ne signifie pas que le protocole de collecte a été respecté.
+**Correction A01 du 30 octobre 2026 :** un gel empirique exige désormais que les 36 essais de développement aient été tentés, avec au moins une réponse valide pour définir la baseline. Une évaluation empirique tentée, même en erreur, exige ce gel. Les journaux interrompus sans gel ni évaluation restent analysables ; les fixtures synthétiques partielles restent permises et identifiées comme telles. Voir l'[audit et sa correction datée](readiness-2026-10-27.md). Ces contrôles ne certifient ni provenance ni déroulement réel de la collecte.
 
 Le même journal peut alimenter l'[analyse de sensibilité par couples de patron](template-sensitivity.md) avec `npm run p01:sensitivity -- journal.json nouveau-rapport-sensibilite.json`. Son rapport séparé conserve l'analyse principale et distingue explicitement la baseline gelée de celle réajustée au sous-ensemble éligible. Le schéma du journal reste v1.
 

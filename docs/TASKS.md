@@ -26,9 +26,11 @@ Objectif : permettre une collecte future contrôlée, sans inventer de données 
 
 **T02F terminé le 27 octobre 2026.** Audit et fiche de décisions dans `research/p01/readiness-2026-10-27.md`, dossier v0.7 et spécification faisant foi clarifiée. Garde A01 manquante reproduite : gel/évaluation acceptés malgré développement incomplet. Les 24 tests existants passent ; ils ne couvrent pas cette garde. Aucune collecte ni changement d'algorithme. Relecture et liens vérifiés ; publication GitHub/Vercel confirmée au commit `3b1485b`, preuves dans le journal.
 
-**T02G — prochain geste.** Corriger et tester uniquement A01 : développement entièrement tenté et baseline définie avant gel ou évaluation empiriques, tout en conservant l'analyse d'un journal interrompu sans gel ni évaluation. Distinguer tentative et réponse valide ; préserver les calculs et contrôles existants. Aucun appel de modèle.
+**T02G terminé localement le 30 octobre 2026.** Garde A01 corrigée : gel empirique impossible avec développement incomplet ; baseline définie toujours exigée. Journaux interrompus et cas synthétiques partiels préservés. Deux tests régressifs échouaient avant correction ; 29 tests et compilation réussissent après, relecture indépendante favorable. Publication à confirmer.
 
-**Reste avant préenregistrement.** Garde A01, règle manuelle des refus, choix du modèle et des ressources, qualification du collecteur et deux gels datés (plan avant développement, baseline avant évaluation). Le jeu simple ne justifie pas à lui seul une étude confirmatoire.
+**T02H — prochain geste.** Fixer D02 : règle manuelle des refus et formats ambigus, priorité aux réponses strictement valides même incorrectes, cas mixtes/tronqués et procédure de correction. Exemples exclusivement fictifs, relecture ; aucun classificateur ni appel de modèle.
+
+**Reste avant préenregistrement.** Règle manuelle des refus, choix du modèle et des ressources, qualification du collecteur et deux gels datés (plan avant développement, baseline avant évaluation). Le jeu simple ne justifie pas à lui seul une étude confirmatoire.
 
 - Dossier versionné : question, hypothèse, critère primaire, exclusions, effectif et règle d'arrêt.
 - Petits jeux de développement et d'évaluation distincts, avec réponses de référence vérifiées indépendamment ; désigner clairement un éventuel jeu de démonstration.

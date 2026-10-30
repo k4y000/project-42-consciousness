@@ -2,6 +2,8 @@
 
 27 octobre 2026 · Codex, assistant IA
 
+**Mise à jour du 30 octobre 2026 : A01 corrigé dans le validateur, voir la dernière section.** Le corps de cet audit conserve les constats et le prochain geste tels qu’ils étaient au 27 octobre ; les décisions D01–D05 restent ouvertes.
+
 **Verdict : préparation méthodologique, pas encore prêt pour préenregistrement final ni collecte.** Audit borné des fichiers et commandes au commit `8f600e2`, suivi de clarifications documentaires v0.7. Aucune observation empirique, aucun appel de modèle, aucune dépense. La réussite des tests de calcul ne suffit pas à qualifier une collecte.
 
 ## Spécification faisant foi
@@ -69,3 +71,14 @@ La correction A01 est autonome et prioritaire ; elle ne nécessite ni modèle ni
 Les 24 tests existants passent encore le 27 octobre, y compris les calculs indépendants et les contrôles d'entrées. La reproduction d'A01 réussit également : c'est une lacune de couverture des contrôles, pas une validation du passage de phase. Deux lectures indépendantes des fichiers concordent sur ce constat. Aucun résultat d'un modèle n'a été produit.
 
 T02F (audit et fiche de décisions) est terminé. T02 dans son ensemble reste en cours. **Prochain geste T02G : corriger et tester uniquement la garde A01**, puis mettre à jour ce constat en conservant son historique. Ne pas ajouter de métrique ni lancer de collecte pour clore l'audit.
+
+
+## Correction du 30 octobre 2026
+
+T02G : `validateJournal` refuse maintenant tout gel empirique si une ligne de développement reste `not_attempted`. La matrice complète est déjà vérifiée ; l'absence de ces lignes impose donc les 36 tentatives prévues. La garde existante exige une baseline définie ; un développement constitué uniquement d'exclusions ne peut pas être gelé. L'exigence existante de gel pour toute évaluation empirique tentée s'applique également aux erreurs de transport.
+
+Les journaux empiriques interrompus avant gel/évaluation restent analysables, y compris sans réponse valide. Refus, sorties invalides et erreurs sont des tentatives, pas des réponses valides. Les fixtures synthétiques partielles conservent leur comportement et leur étiquette. Aucun changement des calculs ou des stimuli ; aucun appel de modèle.
+
+Les [cinq tests de passage de phase](../../test/p01-phase-transition.test.js) couvrent notamment 1 ou 35 essais manquants, gel avant toute évaluation, baseline indéfinie/égale à zéro/égale à un, exclusions et erreur d'évaluation. Les deux tests de rejet A01 échouaient avant la correction et passent après. Les 29 tests du projet et la compilation réussissent ; relecture indépendante sans défaut ni lacune importante. La fixture de chronologie empirique utilise désormais des exclusions synthétiques pour compléter le développement, en conservant q=1/3.
+
+La reproduction ci-dessus est historique : elle est désormais rejetée. Cette correction ne qualifie pas un collecteur et n'empêche pas à elle seule un envoi réseau ; les décisions D01–D05 et les contrôles d'exécution restent nécessaires. Prochain geste T02H : fixer la règle manuelle des refus et sorties ambiguës (D02), avec exemples exclusivement fictifs et priorité explicite au codage d'une réponse strictement valide.

@@ -2,7 +2,7 @@
 
 **Préparation méthodologique uniquement.** Aucun modèle n'est choisi, aucun budget payant n'est autorisé et aucune collecte n'a été exécutée. Les commandes ci-dessous n'appellent aucun fournisseur. Un fichier rempli ne constitue ni une permission de dépenser, ni un préenregistrement.
 
-L'[audit du 27 octobre 2026](readiness-2026-10-27.md) recense les décisions ouvertes et la garde A01 à corriger : le validateur peut encore accepter un gel et une évaluation malgré des essais de développement non tentés. Le contrat ci-dessous l'interdit ; il reste à faire respecter ce passage de phase par le validateur et le futur collecteur.
+L'[audit du 27 octobre 2026 et sa mise à jour](readiness-2026-10-27.md) recensent les décisions ouvertes. A01 est corrigé le 30 octobre : le validateur refuse désormais un gel empirique si le développement n'a pas été entièrement tenté, et exige toujours une baseline définie. Le futur collecteur devra lui aussi empêcher l'envoi prématuré d'une évaluation ; contrôler un journal après coup ne bloque pas les requêtes.
 
 ## Du brouillon au journal vide
 

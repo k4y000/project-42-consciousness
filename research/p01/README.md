@@ -1,4 +1,4 @@
-# P01 — dossier de qualification, version 0.7
+# P01 — dossier de qualification, version 0.8
 
 **Statut : préparation méthodologique, non préenregistrée, aucune collecte réelle.**
 Ce petit jeu qualifie le dispositif (prompts, enregistrement, codage, analyse). Il ne constitue pas un benchmark représentatif des capacités d'un modèle et n'évalue pas la conscience.
@@ -7,7 +7,7 @@ Ce petit jeu qualifie le dispositif (prompts, enregistrement, codage, analyse). 
 
 **Question descriptive.** Sur les réponses valides de ce jeu de qualification, quelle est la différence de Brier entre la confiance déclarée et une confiance constante estimée uniquement sur le développement, avec quelle couverture ? **Attente exploratoire directionnelle :** Brier modèle moins baseline inférieur à zéro. Ce signe ne constitue ni un test confirmatoire, ni une preuve isolée de calibration, de discrimination question par question ou d'introspection. Le pilote qualifie d'abord la faisabilité et la reproductibilité du dispositif ; l'effectif ne repose pas sur un calcul de puissance.
 
-Pour ce pilote, ce dossier, le [format du journal](journal-format.md), le [contrat avant collecte](precollection.md) et la [sensibilité par couples](template-sensitivity.md) font foi. Le protocole générique v0.1 demeure un document exploratoire historique ; sa courbe de fiabilité n'est pas implémentée ici. L'[audit du 27 octobre](readiness-2026-10-27.md) expose les décisions ouvertes et une garde manquante du passage développement → évaluation. **Le dispositif n'est pas encore prêt à collecter.**
+Pour ce pilote, ce dossier, le [format du journal](journal-format.md), le [contrat avant collecte](precollection.md) et la [sensibilité par couples](template-sensitivity.md) font foi. Le protocole générique v0.1 demeure un document exploratoire historique ; sa courbe de fiabilité n'est pas implémentée ici. L'[audit du 27 octobre](readiness-2026-10-27.md) expose les décisions ouvertes et la garde du passage développement → évaluation, corrigée le 30 octobre. Un gel empirique exige désormais les 36 essais de développement tentés et une baseline définie ; les refus/erreurs comptent comme tentatives, sans devenir des réponses valides. **Le dispositif n'est pas encore prêt à collecter.**
 
 ## Matériel et calendrier
 
@@ -76,3 +76,5 @@ Aucun appel payant n'est actuellement autorisé. Aucun résultat produit par ce 
 - 0.5 — 14 octobre 2026, avant toute collecte : revue de trois sources primaires, portée du Brier et de la couverture précisée, indépendance des répétitions non présumée, dépendance entre phases explicitée. Aucun changement des stimuli, effectifs ou algorithmes.
 - 0.6 — 16 octobre 2026, avant toute collecte : sensibilité distincte par couples de patron, sélection et pondération explicites, comparaison sur sous-ensemble identique et qualification synthétique. Analyse principale, stimuli et effectif inchangés.
 - 0.7 — 27 octobre 2026, avant toute collecte : audit de préparation, question et attente descriptive explicitées, hiérarchie documentaire clarifiée et garde de complétude manquante consignée. Aucun changement des calculs, stimuli ou effectifs.
+
+- 0.8 — 30 octobre 2026, avant toute collecte : correction A01, rejet du gel empirique sur développement incomplet ; cinq tests de passage de phase ajoutés, journaux interrompus et fixtures synthétiques préservés. Aucun changement des calculs, stimuli ou effectifs.

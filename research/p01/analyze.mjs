@@ -115,6 +115,9 @@ export function validateJournal(dataset, journal) {
   const freeze = journal.baselineFreeze;
   if (freeze !== null) {
     exactKeys(freeze, ['probability', 'developmentSha256', 'frozenAtUTC'], 'baseline freeze');
+    if (journal.dataKind === 'empirical' && journal.trials.some(row => row.split === 'development' && row.status === 'not_attempted')) {
+      fail('Empirical baseline freeze requires all 36 development trials to be attempted.');
+    }
     if (!Number.isFinite(freeze.probability) || freeze.probability < 0 || freeze.probability > 1 || !utc(freeze.frozenAtUTC)) fail('Invalid baseline freeze.');
     if (freeze.developmentSha256 !== developmentHash(journal.trials)) fail('Frozen development journal fingerprint mismatch.');
     const development = phaseSummary(dataset, journal.trials, 'development');

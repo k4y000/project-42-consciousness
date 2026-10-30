@@ -62,4 +62,4 @@ La [revue critique P01 du 14 octobre 2026](research/p01/review-2026-10-14.md) di
 
 Une [sensibilité aux couples de patron](research/p01/template-sensitivity.md) compare désormais les tirages conjoints et indépendants sur le même sous-ensemble éligible, via `npm run p01:sensitivity -- journal.json nouveau-rapport-sensibilite.json`. Le calcul principal est conservé ; les tests à dépendance connue utilisent uniquement des données synthétiques.
 
-L'[audit P01 du 27 octobre 2026](research/p01/readiness-2026-10-27.md) distingue les calculs qualifiés des conditions de collecte encore manquantes. Il documente une garde de passage entre phases à corriger ; le dispositif n'est pas encore prêt à collecter.
+L'[audit P01 du 27 octobre 2026](research/p01/readiness-2026-10-27.md) distingue les calculs qualifiés des conditions de collecte encore manquantes. Il documente une garde de passage entre phases, corrigée le 30 octobre ; les autres conditions de collecte restent à remplir.

@@ -1,6 +1,6 @@
 # Mémoire de reprise
 
-Dernière mise à jour : 27 octobre 2026. Ce document décrit des faits datés ; confirmer l'état distant avant d'agir.
+Dernière mise à jour : 30 octobre 2026. Ce document décrit des faits datés ; confirmer l'état distant avant d'agir.
 
 ## Intention et décisions
 
@@ -56,9 +56,11 @@ Vérification locale : 24 tests et compilation réussis ; relecture indépendant
 
 T02F terminé le 27 octobre 2026 : audit `research/p01/readiness-2026-10-27.md`, dossier v0.7, question/attente descriptive et hiérarchie documentaire explicites. Le protocole générique v0.1 est historique ; sa courbe de fiabilité n'est pas une fonctionnalité du pilote. Aucun calcul, stimulus ou effectif modifié. Fournisseur/version, ressources, codage manuel des refus, collecteur et deux gels restent ouverts ; le dispositif n'est pas prêt pour préenregistrement final ni collecte.
 
-Lacune A01 vérifiée par relecture indépendante et reproduction locale synthétique : le validateur accepte un gel et une évaluation tentée malgré 35 essais de développement non tentés. Les 24 tests existants passent encore, sans couvrir cette garde. Aucun journal empirique n'a été produit ; la branche empirique a seulement été testée en mémoire. Les documents avertissent explicitement de la limite. Audit relu indépendamment ; 58 liens documentaires locaux vérifiés. Publication du commit `3b1485baa9de28570b47dbdd4ca90673ec2d632e` confirmée : contrôles GitHub `40579846248` réussis et production Vercel `dpl_CEFX7zzQFyGxEP5mJ179ZJ4SRpkK` READY dans la cible autorisée. La garde A01 reste à corriger.
+Lacune A01 vérifiée par relecture indépendante et reproduction locale synthétique : le validateur accepte un gel et une évaluation tentée malgré 35 essais de développement non tentés. Les 24 tests existants passent encore, sans couvrir cette garde. Aucun journal empirique n'a été produit ; la branche empirique a seulement été testée en mémoire. Les documents avertissent explicitement de la limite. Audit relu indépendamment ; 58 liens documentaires locaux vérifiés. Publication du commit `3b1485baa9de28570b47dbdd4ca90673ec2d632e` confirmée : contrôles GitHub `40579846248` réussis et production Vercel `dpl_CEFX7zzQFyGxEP5mJ179ZJ4SRpkK` READY dans la cible autorisée. La garde A01 restait à corriger à cette date ; voir la correction du 30 octobre ci-dessous.
 
-Prochain geste T02G : corriger uniquement la garde A01 et ses tests. Exiger un développement entièrement tenté et une baseline définie avant gel ou évaluation empiriques ; préserver l'analyse des journaux interrompus sans gel ni évaluation. Refus et erreurs sont des tentatives, pas des réponses valides. Maintenir les gardes et calculs existants, documenter la correction, sans appel de modèle. Aucun adaptateur fournisseur qualifié n'existe.
+T02G terminé localement le 30 octobre 2026 : dossier v0.8, garde A01 ajoutée dans `validateJournal`. Un gel empirique refuse tout développement avec essai non tenté ; la baseline doit toujours être définie. Toute évaluation empirique tentée exige ce gel, y compris en erreur. Les journaux interrompus sans gel/évaluation restent analysables ; les fixtures synthétiques partielles sont préservées. Cinq nouveaux tests couvrent les frontières et exclusions ; les deux régressions A01 échouaient avant correction, puis les 29 tests et la compilation réussissent. Relecture indépendante sans défaut ni lacune importante. Aucun changement de calcul, collecte ou dépense. Publication à confirmer.
+
+Prochain geste T02H : fixer D02, la règle manuelle des refus et sorties ambiguës avant collecte. Définir priorité entre réponse strictement valide, refus et format invalide ; conserver toute réponse valide, même fausse ; documenter cas tronqués/mixtes et procédure de correction avec exemples fictifs relus. Aucun classificateur ni nouvel appel de modèle requis. Modèle, ressources, collecteur et deux gels restent ouverts ; aucun adaptateur fournisseur qualifié n'existe.
 
 ## Continuité
 

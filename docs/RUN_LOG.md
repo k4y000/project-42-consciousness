@@ -105,3 +105,14 @@
 **Prochain geste.** T02G : corriger et tester la garde A01 sans modifier les calculs ; préserver l'analyse des journaux interrompus et distinguer essais tentés/réponses valides. Routine quotidienne conservée.
 
 **Publication vérifiée.** Audit relu indépendamment et 58 liens relatifs résolus. Commit `3b1485baa9de28570b47dbdd4ca90673ec2d632e` publié ; [contrôles GitHub 40579846248](https://github.com/k4y000/project-42-consciousness/actions/runs/40579846248) réussis. Production Vercel `dpl_CEFX7zzQFyGxEP5mJ179ZJ4SRpkK` READY pour ce commit dans le projet et l'équipe autorisés. Modification documentaire uniquement, aucune route modifiée. Mémoire et prochain geste T02G sauvegardés ; A01 demeure explicitement non corrigé.
+
+
+## 2026-10-30 — Correction du passage développement → évaluation
+
+**État initial.** Quotas suffisants. Dépôt propre, synchronisation distante vérifiée au commit `e144610` ; la reprise précédente n'avait laissé aucune modification. Cible Vercel et équipe autorisées confirmées, accès public configuré. Reprise limitée à T02G.
+
+**Réalisé.** Dossier v0.8 et garde A01 : le gel empirique exige désormais 36 essais de développement tentés, avec baseline définie par la garde existante. Toute évaluation empirique tentée exige déjà ce gel, y compris une erreur de transport. Les journaux interrompus sans gel/évaluation restent analysables ; les fixtures synthétiques partielles conservent leurs labels et résultats. Les exclusions ne sont pas transformées en réponses valides. Aucun calcul, stimulus, effectif ou interface modifié.
+
+**Vérifié.** Cinq tests ciblés ajoutés. Avant correction, deux échouent par absence de rejet ; après correction, 29 tests et compilation réussissent. Cas de 1 et 35 essais manquants, gel avant évaluation, refus/invalides/erreurs, baseline indéfinie ou égale à zéro/un, journaux interrompus et erreurs d'évaluation couverts. Relecture indépendante sans défaut ni lacune importante. La fixture de chronologie conserve q=1/3 après ajout d'exclusions entièrement synthétiques. Aucun appel de modèle, aucune observation empirique ni dépense.
+
+**Limites et suite.** Le validateur contrôle un journal, pas l'envoi de requêtes. Le collecteur reste à qualifier ; modèle, ressources et gels restent ouverts. Prochain geste T02H : règle manuelle D02 des refus et sorties ambiguës avec exemples fictifs. Routine quotidienne conservée ; publication à confirmer.
