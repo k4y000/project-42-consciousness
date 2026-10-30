@@ -26,7 +26,7 @@ Objectif : permettre une collecte future contrôlée, sans inventer de données 
 
 **T02F terminé le 27 octobre 2026.** Audit et fiche de décisions dans `research/p01/readiness-2026-10-27.md`, dossier v0.7 et spécification faisant foi clarifiée. Garde A01 manquante reproduite : gel/évaluation acceptés malgré développement incomplet. Les 24 tests existants passent ; ils ne couvrent pas cette garde. Aucune collecte ni changement d'algorithme. Relecture et liens vérifiés ; publication GitHub/Vercel confirmée au commit `3b1485b`, preuves dans le journal.
 
-**T02G terminé localement le 30 octobre 2026.** Garde A01 corrigée : gel empirique impossible avec développement incomplet ; baseline définie toujours exigée. Journaux interrompus et cas synthétiques partiels préservés. Deux tests régressifs échouaient avant correction ; 29 tests et compilation réussissent après, relecture indépendante favorable. Publication à confirmer.
+**T02G terminé le 30 octobre 2026.** Garde A01 corrigée : gel empirique impossible avec développement incomplet ; baseline définie toujours exigée. Journaux interrompus et cas synthétiques partiels préservés. Deux tests régressifs échouaient avant correction ; 29 tests et compilation réussissent après, relecture indépendante favorable. Publication GitHub et Vercel vérifiée au commit `ac561d3` ; preuves dans le journal.
 
 **T02H — prochain geste.** Fixer D02 : règle manuelle des refus et formats ambigus, priorité aux réponses strictement valides même incorrectes, cas mixtes/tronqués et procédure de correction. Exemples exclusivement fictifs, relecture ; aucun classificateur ni appel de modèle.
 
