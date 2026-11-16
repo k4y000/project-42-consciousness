@@ -35,6 +35,10 @@ Le journal peut être déclaré `synthetic` pour tester le logiciel ou `empirica
 
 Le dossier v0.2/v0.3 utilisait `generation` pour les réglages souhaités et `baseline.developmentResponsesSha256` pour le futur gel. Dans le brouillon v0.4, déplacer les souhaits vers `requestedGeneration`, laisser `generation: null` jusqu'à clarification et utiliser `baselineFreeze: null` pour initialiser. L'initialiseur rejette explicitement l'ancien champ `baseline` pour éviter une perte silencieuse. **Ne pas migrer un journal collecté en le réinitialisant.** Les anciens stimuli/grilles restent lisibles ; le schéma du journal d'analyse v1 et ses empreintes restent inchangés.
 
+## Codage à figer
+
+La [règle manuelle v1](coding-policy.md) fixe la décision D02. Avant collecte, inscrire sa version/empreinte dans le dossier final, désigner codeur et relecteur, qualifier leur application et définir la correspondance des réponses fournisseur vers le texte exact et les traces de fin de livraison. Les [exemples fictifs](coding-examples.json) qualifient la cohérence du guide avec le format existant ; ils ne qualifient pas un opérateur ou un fournisseur. Le registre séparé conserve décisions, relectures et corrections. Une validation après coup ne remplace pas ces contrôles.
+
 ## Contrat du dispositif de collecte à qualifier
 
 Avant toute collecte, relire le protocole, le codage, les exclusions, l'effectif, les règles d'arrêt et le budget, puis enregistrer le plan final avec une preuve datée indépendante. Le dispositif futur doit satisfaire les contrôles suivants sur des doubles locaux du fournisseur, sans appel réel pour cette qualification.

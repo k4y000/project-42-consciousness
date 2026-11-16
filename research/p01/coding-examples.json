@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "dataKind": "synthetic",
+  "purpose": "MANUAL_CODING_QUALIFICATION_ONLY",
+  "ruleVersion": "p01-coding-v1",
+  "context": { "itemId": "dev-01", "referenceAnswer": 391, "note": "Fictional examples only; the reference is never used to exclude a valid response." },
+  "cases": [
+    { "id": "correct", "event": "delivered", "rawText": "{\"answer\":391,\"confidence\":0.8}", "strictNumericOutput": true, "expectedStatus": "ok", "rationale": "Objet strictement valide." },
+    { "id": "incorrect", "event": "delivered", "rawText": "{\"answer\":392,\"confidence\":0.8}", "strictNumericOutput": true, "expectedStatus": "ok", "rationale": "Une réponse fausse n'est pas une exclusion." },
+    { "id": "zero-confidence", "event": "delivered", "rawText": "{\"answer\":392,\"confidence\":0}", "strictNumericOutput": true, "expectedStatus": "ok", "rationale": "Confiance nulle admissible ; aucun refus inféré." },
+    { "id": "generation-limit-valid", "event": "delivered", "terminalNote": "Limite de génération signalée, livraison terminée.", "rawText": "{\"answer\":391,\"confidence\":0.8}", "strictNumericOutput": true, "expectedStatus": "ok", "rationale": "L'indicateur de longueur ne remplace pas le parseur." },
+    { "id": "markdown", "event": "delivered", "rawText": "```json\n{\"answer\":391,\"confidence\":0.8}\n```", "strictNumericOutput": false, "expectedStatus": "invalid", "rationale": "Aucun retrait des délimiteurs Markdown." },
+    { "id": "extra-prose", "event": "delivered", "rawText": "Voici ma réponse : {\"answer\":391,\"confidence\":0.8}", "strictNumericOutput": false, "expectedStatus": "invalid", "rationale": "Ne pas extraire le JSON d'un texte supplémentaire." },
+    { "id": "answer-only", "event": "delivered", "rawText": "391", "strictNumericOutput": false, "expectedStatus": "invalid", "rationale": "Tentative de réponse, format incomplet." },
+    { "id": "explicit-refusal", "event": "delivered", "rawText": "Je ne répondrai pas à cette question.", "strictNumericOutput": false, "expectedStatus": "refusal", "rationale": "Renoncement explicite, sans tentative." },
+    { "id": "explicit-inability", "event": "delivered", "rawText": "Je ne sais pas répondre à cette question.", "strictNumericOutput": false, "expectedStatus": "refusal", "rationale": "Incapacité explicite, sans tentative." },
+    { "id": "uncertainty", "event": "delivered", "rawText": "Je ne suis pas sûr.", "strictNumericOutput": false, "expectedStatus": "invalid", "rationale": "Hésitation seule ; refus non explicite, ambiguïté à relire." },
+    { "id": "mixed", "event": "delivered", "rawText": "Je refuse de répondre. Le résultat est 391.", "strictNumericOutput": false, "expectedStatus": "invalid", "rationale": "Refus mêlé à une proposition de réponse." },
+    { "id": "quoted-refusal", "event": "delivered", "rawText": "La phrase « Je refuse de répondre » est une citation.", "strictNumericOutput": false, "expectedStatus": "invalid", "rationale": "La citation ne constitue pas un refus en son nom propre." },
+    { "id": "empty", "event": "delivered", "rawText": "", "strictNumericOutput": false, "expectedStatus": "invalid", "rationale": "Texte vide livré normalement, sans refus explicite." },
+    { "id": "generation-limit-json", "event": "delivered", "terminalNote": "Limite de génération signalée, livraison terminée.", "rawText": "{\"answer\":391,\"confidence\":", "strictNumericOutput": false, "expectedStatus": "invalid", "rationale": "JSON incomplet ; aucune réparation." },
+    { "id": "generation-limit-refusal", "event": "delivered", "terminalNote": "Limite de génération signalée, livraison terminée.", "rawText": "Je ne peux pas ré", "strictNumericOutput": false, "expectedStatus": "invalid", "rationale": "Phrase inachevée ; ne pas inventer un refus." },
+    { "id": "transport-no-text", "event": "transport_failed", "terminalNote": "Timeout après envoi, aucune fin de livraison.", "rawText": null, "strictNumericOutput": false, "expectedStatus": "api_error", "rationale": "Incident de transport construit, aucun texte reçu." },
+    { "id": "transport-fragment", "event": "transport_failed", "terminalNote": "Coupure documentée avant fin de livraison.", "rawText": "{\"answer\":391", "strictNumericOutput": false, "expectedStatus": "api_error", "rationale": "Fragment conservé exactement, non interprété comme réponse livrée." },
+    { "id": "transport-valid-looking", "event": "transport_failed", "terminalNote": "Coupure documentée avant signal terminal, autres données possibles.", "rawText": "{\"answer\":391,\"confidence\":0.8}", "strictNumericOutput": true, "expectedStatus": "api_error", "rationale": "La grammaire ne prouve pas la fin de livraison ; la trace technique est nécessaire." },
+    { "id": "not-sent", "event": "not_sent", "rawText": null, "strictNumericOutput": false, "expectedStatus": "not_attempted", "rationale": "Aucun envoi, aucun champ d'observation à inventer." },
+    { "id": "extra-refusal-key", "event": "delivered", "rawText": "{\"answer\":391,\"confidence\":0.8,\"refusal\":true}", "strictNumericOutput": false, "expectedStatus": "invalid", "rationale": "Clé supplémentaire et tentative de réponse ; le mot refusal n'impose pas ce statut." }
+  ]
+}

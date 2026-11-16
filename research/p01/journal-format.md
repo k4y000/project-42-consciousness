@@ -57,6 +57,8 @@ Champs obligatoires, sans autres champs (ne pas ajouter `y`, `correct` ou répon
 
 Pour `not_attempted`, texte, dates, identifiant fournisseur, durée et coût doivent tous être `null`. Ce statut conserve les sessions non exécutées dans les dénominateurs. Pour `api_error`, le motif est conservé dans `statusReason` sans secret. Un `refusal` exige le texte et une justification de codage humain ; le logiciel ne reconnaît pas sémantiquement un refus.
 
+La [règle de codage manuel v1](coding-policy.md) et ses [20 exemples fictifs](coding-examples.json) précisent les priorités, le traitement des sorties mixtes/tronquées et les corrections. Le codeur ne consulte pas la justesse pour décider d’un statut ; un incident de transport exige une trace technique. Le registre de codage reste séparé du journal v1.
+
 Le code recalcule la justesse à partir des références. Un `ok` avec sortie mal formée est rejeté ; une réponse numérique valide, même fausse, ne peut pas être exclue comme `invalid` ou `refusal`. Une sortie valide contient exactement les deux propriétés `answer` et `confidence`, sans répétition de clé. Les nombres sous forme de chaînes et les blocs Markdown sont rejetés. La réponse doit être un entier exact dans l'intervalle des entiers sûrs de JavaScript ; la probabilité doit être mathématiquement dans [0,1]. Les décimales et exposants JSON sont admis si ces règles sont respectées. Une valeur non nulle arrondie à zéro par sous-flux numérique est rejetée. Les calculs utilisent ensuite l'arithmétique flottante usuelle.
 
 ## Gel de la baseline et empreintes

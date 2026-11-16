@@ -2,7 +2,7 @@
 
 27 octobre 2026 · Codex, assistant IA
 
-**Mise à jour du 30 octobre 2026 : A01 corrigé dans le validateur, voir la dernière section.** Le corps de cet audit conserve les constats et le prochain geste tels qu’ils étaient au 27 octobre ; les décisions D01–D05 restent ouvertes.
+**Mise à jour du 30 octobre 2026 : A01 corrigé dans le validateur, voir la dernière section.** Le corps de cet audit conserve les constats et le prochain geste tels qu’ils étaient au 27 octobre ; les décisions D01–D05 étaient ouvertes à cette date. La règle D02 est précisée par la mise à jour du 16 novembre ci-dessous ; la désignation et qualification des opérateurs restent nécessaires.
 
 **Verdict : préparation méthodologique, pas encore prêt pour préenregistrement final ni collecte.** Audit borné des fichiers et commandes au commit `8f600e2`, suivi de clarifications documentaires v0.7. Aucune observation empirique, aucun appel de modèle, aucune dépense. La réussite des tests de calcul ne suffit pas à qualifier une collecte.
 
@@ -82,3 +82,12 @@ Les journaux empiriques interrompus avant gel/évaluation restent analysables, y
 Les [cinq tests de passage de phase](../../test/p01-phase-transition.test.js) couvrent notamment 1 ou 35 essais manquants, gel avant toute évaluation, baseline indéfinie/égale à zéro/égale à un, exclusions et erreur d'évaluation. Les deux tests de rejet A01 échouaient avant la correction et passent après. Les 29 tests du projet et la compilation réussissent ; relecture indépendante sans défaut ni lacune importante. La fixture de chronologie empirique utilise désormais des exclusions synthétiques pour compléter le développement, en conservant q=1/3.
 
 La reproduction ci-dessus est historique : elle est désormais rejetée. Cette correction ne qualifie pas un collecteur et n'empêche pas à elle seule un envoi réseau ; les décisions D01–D05 et les contrôles d'exécution restent nécessaires. Prochain geste T02H : fixer la règle manuelle des refus et sorties ambiguës (D02), avec exemples exclusivement fictifs et priorité explicite au codage d'une réponse strictement valide.
+
+
+## Codage manuel précisé le 16 novembre 2026
+
+T02H : la décision méthodologique D02 est fixée par la [règle de codage v1](coding-policy.md). Priorité aux réponses strictement valides reçues intégralement, même incorrectes ; refus explicite sans tentative, cas mixtes/ambigus invalides et incidents de transport documentés distincts. Le registre séparé et les corrections avant/après gel sont définis, sans antidatation ni contournement du validateur. Toute règle modifiée après observation reste exploratoire.
+
+Vingt [exemples fictifs](coding-examples.json) ont été relus indépendamment. Les attentes de grammaire, la compatibilité des statuts avec le journal v1 et les dénominateurs de couverture sont vérifiés localement, sans enregistrer d'observation ni appeler de modèle. Aucun classificateur, schéma ou calcul modifié. Les opérateurs, leur qualification, le modèle, les ressources et le collecteur restent à fixer ; le dispositif n'est pas prêt à collecter.
+
+Prochain geste T02I : qualifier le noyau séquentiel du futur collecteur sur un double local uniquement, en couvrant l'ordre du développement, l'absence de retry et l'arrêt après erreur ou fin de développement. Aucun connecteur réseau ni envoi d'évaluation dans cette étape.

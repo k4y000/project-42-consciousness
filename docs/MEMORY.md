@@ -1,6 +1,6 @@
 # Mémoire de reprise
 
-Dernière mise à jour : 30 octobre 2026. Ce document décrit des faits datés ; confirmer l'état distant avant d'agir.
+Dernière mise à jour : 16 novembre 2026. Ce document décrit des faits datés ; confirmer l'état distant avant d'agir.
 
 ## Intention et décisions
 
@@ -60,7 +60,11 @@ Lacune A01 vérifiée par relecture indépendante et reproduction locale synthé
 
 T02G terminé le 30 octobre 2026 : dossier v0.8, garde A01 ajoutée dans `validateJournal`. Un gel empirique refuse tout développement avec essai non tenté ; la baseline doit toujours être définie. Toute évaluation empirique tentée exige ce gel, y compris en erreur. Les journaux interrompus sans gel/évaluation restent analysables ; les fixtures synthétiques partielles sont préservées. Cinq nouveaux tests couvrent les frontières et exclusions ; les deux régressions A01 échouaient avant correction, puis les 29 tests et la compilation réussissent. Relecture indépendante sans défaut ni lacune importante. Aucun changement de calcul, collecte ou dépense. Publication du commit `ac561d3e83e03dbb0318c925e5fc8ea69ad0c3e1` vérifiée : contrôles GitHub `41024551434` réussis, production Vercel `dpl_ExmerA6ABoXcfT2YqjemarDAbCMP` READY dans la cible autorisée. Les 56 liens documentaires relatifs contrôlés sont valides.
 
-Prochain geste T02H : fixer D02, la règle manuelle des refus et sorties ambiguës avant collecte. Définir priorité entre réponse strictement valide, refus et format invalide ; conserver toute réponse valide, même fausse ; documenter cas tronqués/mixtes et procédure de correction avec exemples fictifs relus. Aucun classificateur ni nouvel appel de modèle requis. Modèle, ressources, collecteur et deux gels restent ouverts ; aucun adaptateur fournisseur qualifié n'existe.
+T02H terminé localement le 16 novembre 2026 : dossier v0.9, règle `research/p01/coding-policy.md` et 20 exemples dans `coding-examples.json`. Priorité au parseur pour toute sortie reçue intégralement, y compris fausse/confiance nulle ; refus explicite sans tentative, mixte/ambigu invalide, transport interrompu distinct d'une limite de génération. Registre de codage séparé, relecture avant gel du développement/rapport d'évaluation et corrections sans antidatation. Toute règle changée après observation est exploratoire. La règle D02 est fixée ; opérateurs et qualification restent ouverts.
+
+Les 20 exemples fictifs sont compatibles avec le parseur et le journal ; dénominateurs conservés, réponses fausses toujours valides. Relecture indépendante des décisions manuelles, deux précisions de procédure intégrées. Aucun classificateur, schéma, calcul ou appel de modèle ajouté. Publication à confirmer.
+
+Prochain geste T02I : qualifier le noyau séquentiel du futur collecteur sur un double local seulement : ordre du développement, absence de retry, arrêt après erreur ou fin de développement. Aucun connecteur réseau ni envoi d'évaluation à cette étape. Modèle, ressources, opérateurs, qualification fournisseur et deux gels restent ouverts ; aucun adaptateur fournisseur qualifié n'existe.
 
 ## Continuité
 

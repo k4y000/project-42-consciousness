@@ -118,3 +118,14 @@
 **Limites et suite.** Le validateur contrôle un journal, pas l'envoi de requêtes. Le collecteur reste à qualifier ; modèle, ressources et gels restent ouverts. Prochain geste T02H : règle manuelle D02 des refus et sorties ambiguës avec exemples fictifs. Routine quotidienne conservée.
 
 **Publication vérifiée.** Commit `ac561d3e83e03dbb0318c925e5fc8ea69ad0c3e1` poussé sur `main` ; [contrôles GitHub 41024551434](https://github.com/k4y000/project-42-consciousness/actions/runs/41024551434) réussis. Production Vercel `dpl_ExmerA6ABoXcfT2YqjemarDAbCMP` READY pour ce même commit dans le projet et l'équipe autorisés. Cinquante-six liens documentaires relatifs contrôlés. Aucun changement d'interface ; mémoire et prochaine tâche T02H sauvegardées.
+
+
+## 2026-11-16 — Règle manuelle des refus et réponses ambiguës
+
+**État initial.** Quotas suffisants ; dépôt propre et synchronisé au commit `602d3cb` après vérification distante. Cible Vercel et équipe autorisées confirmées, production existante READY et protections désactivées. Reprise limitée à T02H.
+
+**Réalisé.** Dossier v0.9, règle manuelle D02 et 20 exemples exclusivement fictifs. Priorité aux sorties strictement valides normalement livrées, même fausses/confiance nulle ; refus sans tentative, mélange/ambiguïté invalide. Transport interrompu distingué d'une limite de génération. Registre séparé et correction avant/après gel explicités, sans modification du schéma ni antidatation. Aucun algorithme ou interface changé.
+
+**Vérifié.** Attentes de grammaire et compatibilité des 20 cas contrôlées avec `parseOutput`, `validateJournal` et `analyzeJournal` en mémoire : couverture sur 36 essais conservée, réponses incorrectes valides incluses. Relecture indépendante des labels et de la procédure ; précisions intégrées sur le moment de relecture de l'évaluation et les changements de règle pendant le développement. Aucun journal d'observations écrit, aucun appel de modèle ni dépense.
+
+**Limites et suite.** Guide et exemples ne qualifient pas un codeur ni un fournisseur. Modèle, ressources, opérateurs, collecteur et deux gels restent à fixer. Prochain geste T02I : noyau de collecte séquentielle avec double local, ordre du développement, aucun retry et arrêt après erreur/fin du développement. Aucune inférence réseau ni évaluation. Routine quotidienne conservée ; publication à confirmer.

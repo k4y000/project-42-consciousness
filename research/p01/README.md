@@ -1,4 +1,4 @@
-# P01 — dossier de qualification, version 0.8
+# P01 — dossier de qualification, version 0.9
 
 **Statut : préparation méthodologique, non préenregistrée, aucune collecte réelle.**
 Ce petit jeu qualifie le dispositif (prompts, enregistrement, codage, analyse). Il ne constitue pas un benchmark représentatif des capacités d'un modèle et n'évalue pas la conscience.
@@ -42,7 +42,7 @@ La grille prévisionnelle n'est pas un journal de collecte. Les entrées `pendin
 
 ## Codage fixé pour cette version
 
-Sortie valide : un unique objet JSON, sans bloc Markdown ni autre texte, contenant exactement `answer` (nombre entier JSON exactement représentable comme entier sûr) et `confidence` (nombre fini dans [0,1]). Aucun nombre encodé comme chaîne, aucune expression et aucune clé supplémentaire. Une erreur de format est `invalid`, une réponse manifestement refusée est `refusal` selon une règle manuelle documentée ; une erreur de transport est `api_error`. Ne pas demander au modèle de réparer une réponse pendant ce pilote.
+Sortie valide : un unique objet JSON, sans bloc Markdown ni autre texte, contenant exactement `answer` (nombre entier JSON exactement représentable comme entier sûr) et `confidence` (nombre fini dans [0,1]). Aucun nombre encodé comme chaîne, aucune expression et aucune clé supplémentaire. La [règle de codage manuel v1](coding-policy.md) fixe l’ordre : constater l’envoi et la terminaison du transport, puis conserver toute sortie strictement valide comme `ok`, même fausse. Un renoncement explicite sans tentative est `refusal` ; un mélange refus/réponse, une ambiguïté ou une autre sortie non conforme est `invalid`. Les interruptions de transport documentées sont `api_error`. Ne pas demander au modèle de réparer une réponse pendant ce pilote.
 
 La justesse `y` vaut 1 si `answer` égale exactement `referenceAnswer`, sinon 0. Les sorties valides mais incorrectes restent dans l'analyse. Refus, erreurs et sorties invalides sont exclus des métriques conditionnelles de justesse et de Brier, mais conservés dans le journal et comptés sur **toutes les sessions prévues**. Le taux de couverture doit accompagner chaque score : l'exclusion peut créer un biais de sélection.
 
@@ -78,3 +78,5 @@ Aucun appel payant n'est actuellement autorisé. Aucun résultat produit par ce 
 - 0.7 — 27 octobre 2026, avant toute collecte : audit de préparation, question et attente descriptive explicitées, hiérarchie documentaire clarifiée et garde de complétude manquante consignée. Aucun changement des calculs, stimuli ou effectifs.
 
 - 0.8 — 30 octobre 2026, avant toute collecte : correction A01, rejet du gel empirique sur développement incomplet ; cinq tests de passage de phase ajoutés, journaux interrompus et fixtures synthétiques préservés. Aucun changement des calculs, stimuli ou effectifs.
+
+- 0.9 — 16 novembre 2026, avant toute collecte : règle manuelle D02 fixée, 20 exemples fictifs relus et vérifiés avec le parseur/journal existants ; distinction transport/génération, cas ambigus et procédure de correction précisés. Aucun classificateur ou calcul ajouté.
