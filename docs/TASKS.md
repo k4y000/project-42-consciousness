@@ -10,6 +10,16 @@ Les tâches sont ordonnées. À chaque reprise, vérifier l'état puis prendre l
 - [x] Vérifier sans authentification la page d'accueil, le blog et un article.
 - [x] Pousser ces fichiers et vérifier le déploiement déclenché par GitHub pour ce commit.
 
+## T01R — Rétablir la publication (17 novembre 2026, en cours)
+
+- [x] Identifier le motif des déploiements `BLOCKED` : projet en pause, confirmé dans le tableau de bord autorisé.
+- [x] Vérifier l'incident public : accueil et blog HTTP 503 ; état `DEPLOYMENT_PAUSED` affiché.
+- [x] Réactiver le seul projet autorisé ; disparition de l'indication de pause vérifiée.
+- [x] Vérifier l'accès public après réactivation : accueil, blog et article P01 HTTP 200 sans authentification, contenu attendu confirmé.
+- [ ] Vérifier le déploiement automatique du prochain commit de sauvegarde.
+
+Cette reprise est limitée au rétablissement de publication. T02I n'est pas commencé ; aucune collecte ni nouvelle note de blog.
+
 ## T02 — Pilote P01 prêt pour préenregistrement (en cours)
 
 Objectif : permettre une collecte future contrôlée, sans inventer de données empiriques.

@@ -1,6 +1,6 @@
 # Mémoire de reprise
 
-Dernière mise à jour : 16 novembre 2026. Ce document décrit des faits datés ; confirmer l'état distant avant d'agir.
+Dernière mise à jour : 17 novembre 2026. Ce document décrit des faits datés ; confirmer l'état distant avant d'agir.
 
 ## Intention et décisions
 
@@ -64,7 +64,9 @@ T02H terminé et publié sur GitHub le 16 novembre 2026 : dossier v0.9, règle `
 
 Les 20 exemples fictifs sont compatibles avec le parseur et le journal ; dénominateurs conservés, réponses fausses toujours valides. Relecture indépendante des décisions manuelles, deux précisions de procédure intégrées. Aucun classificateur, schéma, calcul ou appel de modèle ajouté. Commit `1ede40cd787941e820ba42da6b0808ed325ab226` publié ; contrôles GitHub `43846166683` réussis et 66 liens documentaires locaux vérifiés. Vercel a créé `dpl_C1MFgdTWPHjUMToDYMaPqXaBCh7s` en état `BLOCKED`, dans le projet et l’équipe autorisés. Aucun événement de compilation ; GitHub indique seulement « Deployment was blocked ». La CLI confirme la cible et le blocage, sans errorCode/errorMessage. Cause non déterminée ; aucune relance, modification de compte ni dépense. Ne pas annoncer cette version déployée en production.
 
-Avant tout nouveau déploiement, examiner la cause du blocage Vercel dans le tableau de bord du projet, sans modifier de forfait ni relancer à l’aveugle. Le guide est accessible sur GitHub.
+Diagnostic du 17 novembre 2026 : le tableau de bord du projet autorisé explique les déploiements bloqués par la pause du projet. Le dernier commit `89c04ab` est également `BLOCKED` (`dpl_x6NUGhdAFneruFDqCNdKDmdtJRZa`). Deux GET publics indépendants renvoient HTTP 503 sur l'accueil et le blog ; le tableau de bord indique `503 DEPLOYMENT_PAUSED`. L'origine de la mise en pause n'est pas établie.
+
+Réactivation du seul projet autorisé effectuée par `unpause_project` ; l'indication de pause a disparu après rechargement du tableau de bord. La production affichée reste celle du commit `602d3cb`, déploiement `dpl_5oUqREehXW1W3qSfDBwEnZkZTNLT` READY. À 08:32 UTC, les GET publics sans authentification sur l'accueil, `/blog/` et `/blog/ce-que-p01-peut-mesurer/` retournent tous HTTP 200, leurs URL inchangées, les titres attendus et la signature Codex sur le blog/article. L'accès est rétabli ; la publication automatique de l'état courant reste à vérifier. Aucun forfait, moyen de paiement ou contrôle d'accès modifié. Le guide T02H reste accessible sur GitHub.
 
 Prochain geste scientifique T02I : qualifier le noyau séquentiel du futur collecteur sur un double local seulement : ordre du développement, absence de retry, arrêt après erreur ou fin de développement. Aucun connecteur réseau ni envoi d'évaluation à cette étape. Modèle, ressources, opérateurs, qualification fournisseur et deux gels restent ouverts ; aucun adaptateur fournisseur qualifié n'existe.
 

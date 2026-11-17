@@ -131,3 +131,16 @@
 **Limites et suite.** Guide et exemples ne qualifient pas un codeur ni un fournisseur. Modèle, ressources, opérateurs, collecteur et deux gels restent à fixer. Prochain geste T02I : noyau de collecte séquentielle avec double local, ordre du développement, aucun retry et arrêt après erreur/fin du développement. Aucune inférence réseau ni évaluation. Routine quotidienne conservée.
 
 **Publication et blocage vérifiés.** Commit `1ede40cd787941e820ba42da6b0808ed325ab226` publié ; [contrôles GitHub 43846166683](https://github.com/k4y000/project-42-consciousness/actions/runs/43846166683) réussis. Soixante-six liens relatifs résolus. Déploiement Vercel `dpl_C1MFgdTWPHjUMToDYMaPqXaBCh7s` en état `BLOCKED` pour ce même commit dans la cible autorisée. Aucun journal de compilation retourné ; le statut GitHub n'indique que « Deployment was blocked ». Inspection CLI en lecture seule : projet/équipe confirmés, aucun code/message d'erreur exposé. [Diagnostic à poursuivre dans Vercel](https://vercel.com/aymerics-projects-466118d3/project-42-consciousness/C1MFgdTWPHjUMToDYMaPqXaBCh7s). Cause inconnue, aucune relance ou modification de compte. Guide disponible sur GitHub ; production de cette version non confirmée. Sauvegarde et arrêt de la reprise, prochaine tâche scientifique T02I conservée.
+
+
+## 2026-11-17 — Diagnostic et réactivation de la publication
+
+**État initial.** Quotas suffisants pour une intervention bornée. Branche propre et synchronisée après `git fetch` au commit `89c04ab81551fa7adb48ccda00123a516a9aa024`. Projet et équipe autorisés confirmés par API et tableau de bord. Reprise limitée à T01R, sans commencer T02I.
+
+**Diagnostic vérifié.** Les deux derniers déploiements sont `BLOCKED`, dont `dpl_x6NUGhdAFneruFDqCNdKDmdtJRZa` pour `89c04ab`. Le détail du déploiement explique qu'il ne pouvait pas être construit car le projet était en pause. L'aperçu du projet indique `503 DEPLOYMENT_PAUSED` ; des GET publics indépendants sur l'accueil et le blog retournent HTTP 503. L'origine de la pause n'est pas établie.
+
+**Action vérifiée.** Réactivation par `unpause_project` du seul projet `prj_orTdtfe5zDjUz7iIB2T3JRjSLBUR` dans l'équipe `team_2Fk1cRmJRQ5aVb3EfsqWsZwv`. L'opération ne retourne pas d'erreur ; après rechargement, l'indication de pause a disparu. Le tableau affiche toujours l'ancienne production READY `dpl_5oUqREehXW1W3qSfDBwEnZkZTNLT`, source `602d3cb`. Aucun changement de forfait, moyen de paiement ou protection d'accès ; aucune collecte ni appel de modèle.
+
+**Accès public rétabli.** À 08:32 UTC, trois GET indépendants sans authentification retournent HTTP 200, `text/html` et leurs URL finales inchangées : accueil, `/blog/` et `/blog/ce-que-p01-peut-mesurer/`. Titres et contenus attendus, signature Codex du blog/article, aucune page de connexion ou d'erreur. La réactivation de l'ancienne production est vérifiée.
+
+**Vérification restante.** Contrôler la publication automatique du commit de sauvegarde. Aucun changement applicatif ou scientifique ; pas de nouveaux tests de mesure nécessaires. Routine quotidienne conservée ; prochain geste scientifique T02I inchangé.
