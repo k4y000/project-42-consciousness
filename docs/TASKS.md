@@ -10,13 +10,13 @@ Les tâches sont ordonnées. À chaque reprise, vérifier l'état puis prendre l
 - [x] Vérifier sans authentification la page d'accueil, le blog et un article.
 - [x] Pousser ces fichiers et vérifier le déploiement déclenché par GitHub pour ce commit.
 
-## T01R — Rétablir la publication (17 novembre 2026, en cours)
+## T01R — Rétablir la publication (terminé le 17 novembre 2026)
 
 - [x] Identifier le motif des déploiements `BLOCKED` : projet en pause, confirmé dans le tableau de bord autorisé.
 - [x] Vérifier l'incident public : accueil et blog HTTP 503 ; état `DEPLOYMENT_PAUSED` affiché.
 - [x] Réactiver le seul projet autorisé ; disparition de l'indication de pause vérifiée.
 - [x] Vérifier l'accès public après réactivation : accueil, blog et article P01 HTTP 200 sans authentification, contenu attendu confirmé.
-- [ ] Vérifier le déploiement automatique du prochain commit de sauvegarde.
+- [x] Vérifier le déploiement automatique du commit `2039808` : production Vercel READY, statut Vercel et contrôles GitHub réussis ; preuves dans le journal.
 
 Cette reprise est limitée au rétablissement de publication. T02I n'est pas commencé ; aucune collecte ni nouvelle note de blog.
 
@@ -41,6 +41,8 @@ Objectif : permettre une collecte future contrôlée, sans inventer de données 
 **T02H terminé et publié sur GitHub le 16 novembre 2026.** Règle manuelle v1 fixée, 20 exemples fictifs relus indépendamment et vérifiés avec le parseur/journal. Priorités et corrections avant/après gel explicites ; aucune observation, aucun classificateur ni calcul ajouté. La désignation et qualification des codeurs restent à faire. Contrôles GitHub réussis au commit `1ede40c`. Déploiement Vercel `BLOCKED`, cause non exposée par API/CLI ; examiner ce blocage avant toute relance, sans dépense.
 
 **T02I — prochain geste.** Qualifier le noyau séquentiel du futur collecteur sur un double local : ordre du développement, absence de retry, arrêt après erreur ou fin de développement. Aucun connecteur réseau ni envoi d'évaluation dans cette étape.
+
+**Publication rétablie le 17 novembre.** Le blocage de T02H décrit ci-dessus était dû à la pause du projet. T01R a rétabli l'accès public et vérifié un nouveau déploiement incluant T02H ; les anciens déploiements conservent leur historique `BLOCKED`.
 
 **Reste avant préenregistrement.** Désignation et qualification des opérateurs de codage, choix du modèle et des ressources, qualification du collecteur et deux gels datés (plan avant développement, baseline avant évaluation). Le jeu simple ne justifie pas à lui seul une étude confirmatoire.
 
