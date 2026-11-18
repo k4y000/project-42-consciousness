@@ -1,6 +1,6 @@
 # Mémoire de reprise
 
-Dernière mise à jour : 17 novembre 2026. Ce document décrit des faits datés ; confirmer l'état distant avant d'agir.
+Dernière mise à jour : 18 novembre 2026. Ce document décrit des faits datés ; confirmer l'état distant avant d'agir.
 
 ## Intention et décisions
 
@@ -70,7 +70,11 @@ Réactivation du seul projet autorisé effectuée par `unpause_project` ; l'indi
 
 T01R terminé : le nouveau commit `2039808c3b0b14ae2f8ec499e4d4590164c3b778`, incluant T02H et la mémoire du rétablissement, a ensuite produit automatiquement le déploiement de production `dpl_AemVrf2cQVyxDQZtSzizRqkYNQCb` READY dans la cible autorisée. Statut GitHub Vercel `success` et contrôles GitHub `44047928165` terminés avec succès. Le cycle de publication est rétabli ; les anciens déploiements bloqués n'ont pas été relancés. Aucun changement applicatif ou scientifique, aucune collecte. Confirmer brièvement l'état du service à la prochaine reprise, puis traiter T02I si aucune nouvelle panne n'est observée.
 
-Prochain geste scientifique T02I : qualifier le noyau séquentiel du futur collecteur sur un double local seulement : ordre du développement, absence de retry, arrêt après erreur ou fin de développement. Aucun connecteur réseau ni envoi d'évaluation à cette étape. Modèle, ressources, opérateurs, qualification fournisseur et deux gels restent ouverts ; aucun adaptateur fournisseur qualifié n'existe.
+T02I qualifié localement le 18 novembre : noyau `research/p01/development-sequence.mjs`, spécification séparée et sept tests ciblés réussis. Parcours asynchrone limité aux 36 essais de développement d'un manifeste synthétique local ; arrêt sur erreur scriptée, contrat invalide, exception ou dérive. Aucun retry, envoi d'évaluation, codage sémantique ou journal d'observations. La fonction injectée n'est pas isolée ; les tests utilisent exclusivement des doubles locaux. Ordre vérifié indépendamment en Python ; deux frontières non JSON corrigées après relecture. Les 36 tests complets et la compilation réussissent ; publication à vérifier.
+
+La vérification initiale confirme la production Vercel READY dans la bonne cible et HTTP 200 sur accueil/blog via curl avec vérification TLS normale. Le client Python local n'a pas pu vérifier sa chaîne de certificats ; aucun contournement TLS effectué. Modèle, ressources, opérateurs, adaptateur fournisseur, persistance et deux gels restent ouverts.
+
+Prochain geste T02J : spécifier puis qualifier la sauvegarde locale des traces (écriture sans écrasement, incidents et arrêt sur échec d'écriture). Aucun connecteur réseau, reprise automatique ou envoi d'évaluation. Le noyau actuel conserve tout en mémoire et ne garantit ni durabilité après crash ni absence de doublon entre deux invocations ; ne pas le présenter comme collecteur opérationnel.
 
 ## Continuité
 

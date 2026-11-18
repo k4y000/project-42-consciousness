@@ -65,3 +65,5 @@ Une [sensibilité aux couples de patron](research/p01/template-sensitivity.md) c
 L'[audit P01 du 27 octobre 2026](research/p01/readiness-2026-10-27.md) distingue les calculs qualifiés des conditions de collecte encore manquantes. Il documente une garde de passage entre phases, corrigée le 30 octobre ; les autres conditions de collecte restent à remplir.
 
 La [règle de codage manuel P01](research/p01/coding-policy.md), précisée le 16 novembre, distingue réponses valides, refus, formats ambigus et incidents de transport. Ses 20 exemples sont fictifs ; aucune collecte réelle n'a été exécutée.
+
+Le [noyau séquentiel P01](research/p01/development-sequence.md) est testé uniquement avec des doubles locaux : ordre du développement, absence de retry et arrêt avant toute évaluation. Aucun adaptateur fournisseur ou collecteur opérationnel n'est fourni.

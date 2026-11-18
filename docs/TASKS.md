@@ -40,7 +40,9 @@ Objectif : permettre une collecte future contrôlée, sans inventer de données 
 
 **T02H terminé et publié sur GitHub le 16 novembre 2026.** Règle manuelle v1 fixée, 20 exemples fictifs relus indépendamment et vérifiés avec le parseur/journal. Priorités et corrections avant/après gel explicites ; aucune observation, aucun classificateur ni calcul ajouté. La désignation et qualification des codeurs restent à faire. Contrôles GitHub réussis au commit `1ede40c`. Déploiement Vercel `BLOCKED`, cause non exposée par API/CLI ; examiner ce blocage avant toute relance, sans dépense.
 
-**T02I — prochain geste.** Qualifier le noyau séquentiel du futur collecteur sur un double local : ordre du développement, absence de retry, arrêt après erreur ou fin de développement. Aucun connecteur réseau ni envoi d'évaluation dans cette étape.
+**T02I qualifié localement le 18 novembre 2026 ; publication à vérifier.** Noyau synthétique séquentiel limité aux 36 essais de développement, événements et incidents distincts, aucun retry/gel/envoi d'évaluation. Sept tests ciblés, 36 tests complets et compilation réussis ; ordre relu indépendamment, deux frontières non JSON corrigées. Aucun adaptateur fournisseur, timer réel ou persistance ; aucun modèle appelé.
+
+**T02J — prochain geste.** Spécifier puis qualifier une sauvegarde locale des traces : écriture sans écrasement, conservation des incidents, arrêt sur échec d'écriture. Ne pas ajouter de reprise automatique, connecteur fournisseur ou évaluation ; préciser les garanties réelles en cas d'interruption du processus avant toute collecte.
 
 **Publication rétablie le 17 novembre.** Le blocage de T02H décrit ci-dessus était dû à la pause du projet. T01R a rétabli l'accès public et vérifié un nouveau déploiement incluant T02H ; les anciens déploiements conservent leur historique `BLOCKED`.
 

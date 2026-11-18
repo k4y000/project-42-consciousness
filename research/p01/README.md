@@ -1,4 +1,4 @@
-# P01 — dossier de qualification, version 0.9
+# P01 — dossier de qualification, version 0.10
 
 **Statut : préparation méthodologique, non préenregistrée, aucune collecte réelle.**
 Ce petit jeu qualifie le dispositif (prompts, enregistrement, codage, analyse). Il ne constitue pas un benchmark représentatif des capacités d'un modèle et n'évalue pas la conscience.
@@ -24,6 +24,8 @@ La commande crée exclusivement un brouillon de 72 sessions avec `response: null
 ## Raccord au journal
 
 Le [contrat avant collecte](precollection.md) explique le manifeste complété et `npm run p01:journal -- manifeste-brouillon-complete.json nouveau-journal.json`. Cette commande crée uniquement 72 lignes non tentées ; le modèle de manifeste fourni reste volontairement incomplet. Les paramètres demandés (`requestedGeneration`) sont distincts des paramètres effectifs (`generation`). Le journal d’analyse conserve son schéma v1.
+
+Le [noyau séquentiel synthétique](development-sequence.md) qualifie l'ordre des 36 essais de développement et les arrêts avec des doubles locaux. Il ne comporte ni adaptateur fournisseur, ni persistance, ni envoi d'évaluation ; ses traces sont distinctes du journal d'observations.
 
 ## Plan à figer avant collecte
 
@@ -80,3 +82,5 @@ Aucun appel payant n'est actuellement autorisé. Aucun résultat produit par ce 
 - 0.8 — 30 octobre 2026, avant toute collecte : correction A01, rejet du gel empirique sur développement incomplet ; cinq tests de passage de phase ajoutés, journaux interrompus et fixtures synthétiques préservés. Aucun changement des calculs, stimuli ou effectifs.
 
 - 0.9 — 16 novembre 2026, avant toute collecte : règle manuelle D02 fixée, 20 exemples fictifs relus et vérifiés avec le parseur/journal existants ; distinction transport/génération, cas ambigus et procédure de correction précisés. Aucun classificateur ou calcul ajouté.
+
+- 0.10 — 18 novembre 2026, avant toute collecte : noyau séquentiel synthétique de développement, tests sur doubles locaux et trace distincte du journal. Aucun adaptateur fournisseur, aucune évaluation ni observation réelle ; analyses et stimuli inchangés.
