@@ -159,3 +159,16 @@
 **Limites et suite.** Fonction injectée de confiance, sans isolation réseau ; ni timer réel/annulation, persistance, reprise, verrou, idempotence entre invocations ou contrôle de coût fournisseur. Les compteurs ne prouvent pas des envois fournisseur. Aucune modification des analyses, stimuli, site ou blog. Prochain geste T02J : sauvegarde locale des traces et arrêt sur échec d'écriture, sans reprise automatique ou réseau. Routine quotidienne conservée.
 
 **Publication vérifiée.** Commit `a9a6af31d8369734d84edbf8f0b65ae45db8dd61` poussé sur `main` ; [contrôles GitHub 44270024113](https://github.com/k4y000/project-42-consciousness/actions/runs/44270024113) terminés avec succès. Production Vercel `dpl_8o4JU5jo1onHvt2RiH5guYUncURd` READY pour ce même commit dans le seul projet et l'équipe autorisés. Aucune route ou interface changée ; accès public déjà contrôlé à l'ouverture de la reprise. Mémoire, tâches et prochaine étape T02J sauvegardées.
+
+
+## 2026-11-21 — Contrat de sauvegarde des traces locales
+
+**État initial.** Quotas consultés ; intervention bornée après interruption de session. Dépôt propre au commit `6be7bf1`, actualisation distante réussie. Projet/équipe autorisés confirmés, dernier déploiement READY ; accueil public HTTP 200 avec vérification TLS normale. Aucune modification antérieure de cette reprise n'avait été laissée dans le dépôt.
+
+**Réalisé.** T02J1 : spécification `trace-storage-plan.md` du futur stockage JSONL synthétique. Ouverture exclusive ; header puis intention avant appel, résultat avant suivant, terminal en fin ; attente des écritures complètes et synchronisations. Erreurs d'ouverture/écriture/synchronisation/fermeture distinguées, conservation du fichier partiel et du rapport mémoire, aucune écriture corrective ni reprise automatique. Une intention ne prouve pas un appel et l'absence de résultat demeure ambiguë.
+
+**Vérification et limites.** Relecture indépendante du plan de qualification : collision de fichier, 74 lignes d'un parcours complet, barrières, échecs injectés, incidents du double et fermeture. Tests d'arrêt de processus ajoutés au contrat ; ils restent à implémenter, comme tout le stockage. Aucun test de persistance exécuté, aucun changement de code de mesure, aucune donnée empirique ni appel de modèle. Pas de garantie de panne électrique ou d'exécution exactement une fois.
+
+**Prochain geste.** T02J2 : implémenter et tester le contrat sur fichiers temporaires et doubles locaux. Aucun réseau fournisseur, reprise automatique ou évaluation. Routine quotidienne conservée ; publication du document à vérifier.
+
+**Contrôle documentaire final.** Relecture indépendante du contrat et de cette entrée sans défaut important ; 78 liens documentaires locaux résolus et diff vérifié. Aucun test logiciel ajouté ou rejoué pour cette modification documentaire.

@@ -1,6 +1,6 @@
 # Mémoire de reprise
 
-Dernière mise à jour : 18 novembre 2026. Ce document décrit des faits datés ; confirmer l'état distant avant d'agir.
+Dernière mise à jour : 21 novembre 2026. Ce document décrit des faits datés ; confirmer l'état distant avant d'agir.
 
 ## Intention et décisions
 
@@ -74,7 +74,9 @@ T02I terminé et publié le 18 novembre : noyau `research/p01/development-sequen
 
 La vérification initiale confirme la production Vercel READY dans la bonne cible et HTTP 200 sur accueil/blog via curl avec vérification TLS normale. Le client Python local n'a pas pu vérifier sa chaîne de certificats ; aucun contournement TLS effectué. Modèle, ressources, opérateurs, adaptateur fournisseur, persistance et deux gels restent ouverts.
 
-Prochain geste T02J : spécifier puis qualifier la sauvegarde locale des traces (écriture sans écrasement, incidents et arrêt sur échec d'écriture). Aucun connecteur réseau, reprise automatique ou envoi d'évaluation. Le noyau actuel conserve tout en mémoire et ne garantit ni durabilité après crash ni absence de doublon entre deux invocations ; ne pas le présenter comme collecteur opérationnel.
+T02J1 terminé : contrat de sauvegarde locale fixé dans `research/p01/trace-storage-plan.md` le 21 novembre. Ouverture exclusive, header/intention/résultat/terminal synchronisés en ordre, arrêt sans nouvel appel après erreur de stockage, rapport mémoire et fichier partiel préservés. Une intention sans résultat reste ambiguë ; aucune reprise automatique. Spécification uniquement, relue indépendamment sans défaut important ; aucun code de persistance ni test de stockage exécuté.
+
+Prochain geste T02J2 : implémenter ce contrat et ses six groupes de tests (fichier réel, barrières, échecs injectés, fermeture, interruption de processus). Aucun connecteur réseau ni envoi d'évaluation. Le noyau actuel conserve tout en mémoire et ne garantit ni durabilité après crash ni absence de doublon entre deux invocations ; ne pas le présenter comme collecteur opérationnel.
 
 ## Continuité
 

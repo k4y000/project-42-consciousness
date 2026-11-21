@@ -42,7 +42,9 @@ Objectif : permettre une collecte future contrôlée, sans inventer de données 
 
 **T02I terminé et publié le 18 novembre 2026.** Noyau synthétique séquentiel limité aux 36 essais de développement, événements et incidents distincts, aucun retry/gel/envoi d'évaluation. Sept tests ciblés, 36 tests complets et compilation réussis ; ordre relu indépendamment, deux frontières non JSON corrigées. Aucun adaptateur fournisseur, timer réel ou persistance ; aucun modèle appelé. Contrôles GitHub réussis et production Vercel READY au commit `a9a6af3` ; preuves dans le journal.
 
-**T02J — prochain geste.** Spécifier puis qualifier une sauvegarde locale des traces : écriture sans écrasement, conservation des incidents, arrêt sur échec d'écriture. Ne pas ajouter de reprise automatique, connecteur fournisseur ou évaluation ; préciser les garanties réelles en cas d'interruption du processus avant toute collecte.
+**T02J — en cours.** T02J1 fixe le [contrat de sauvegarde locale](../research/p01/trace-storage-plan.md) : fichier exclusif, intentions/résultats synchronisés, erreurs et ambiguïté après interruption. Spécification seulement ; aucune persistance implémentée ou qualifiée.
+
+**T02J2 — prochain geste.** Implémenter le contrat et les tests de fichier réel, barrières d'écriture/synchronisation, erreurs injectées, fermeture et interruption de processus. Ne pas ajouter de reprise automatique, connecteur fournisseur ou évaluation ; conserver les limites de durabilité explicites.
 
 **Publication rétablie le 17 novembre.** Le blocage de T02H décrit ci-dessus était dû à la pause du projet. T01R a rétabli l'accès public et vérifié un nouveau déploiement incluant T02H ; les anciens déploiements conservent leur historique `BLOCKED`.
 
