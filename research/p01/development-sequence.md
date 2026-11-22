@@ -38,7 +38,7 @@ Le rapport porte `status: "SYNTHETIC_LOCAL_SEQUENCE_ONLY"` et `dataKind: "synthe
 
 Le compteur mesure les **appels au double**, pas les requêtes d'un client fournisseur. Le noyau ne peut détecter des appels cachés à l'intérieur de la fonction injectée. Il n'a pas de minuterie : une promesse qui ne se résout pas bloque la simulation. Un événement `timeout` teste une transition d'arrêt ; il ne qualifie ni une échéance réelle, ni l'annulation d'une requête, ni une résolution tardive après annulation.
 
-La trace reste en mémoire. Ni persistance après crash, reprise, verrou entre processus, idempotence entre invocations, plafond de coût réel, version effective fournisseur ou preuve d'absence d'outils ne sont implémentés. Réappeler cette fonction redémarre une simulation ; **ne pas l'utiliser pour reprendre une collecte réelle**. Aucun journal v1 d'observations n'est produit et aucune date ou réponse empirique n'est inventée.
+Sans callback, la trace reste en mémoire. Le [mode enregistré du 22 novembre](trace-storage-plan.md) ajoute une sauvegarde exclusive avec synchronisations et tests d'interruption de processus. Il ne fournit ni reprise, idempotence entre invocations, plafond de coût réel, version effective fournisseur ou preuve d'absence d'outils. Réappeler cette fonction redémarre une simulation ; **ne pas l'utiliser pour reprendre une collecte réelle**. Aucun journal v1 d'observations n'est produit et aucune date ou réponse empirique n'est inventée.
 
 ## Qualification reproductible
 

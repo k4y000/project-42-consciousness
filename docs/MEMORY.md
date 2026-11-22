@@ -1,6 +1,6 @@
 # Mémoire de reprise
 
-Dernière mise à jour : 21 novembre 2026. Ce document décrit des faits datés ; confirmer l'état distant avant d'agir.
+Dernière mise à jour : 22 novembre 2026. Ce document décrit des faits datés ; confirmer l'état distant avant d'agir.
 
 ## Intention et décisions
 
@@ -76,7 +76,11 @@ La vérification initiale confirme la production Vercel READY dans la bonne cibl
 
 T02J1 terminé : contrat de sauvegarde locale fixé dans `research/p01/trace-storage-plan.md` le 21 novembre. Ouverture exclusive, header/intention/résultat/terminal synchronisés en ordre, arrêt sans nouvel appel après erreur de stockage, rapport mémoire et fichier partiel préservés. Une intention sans résultat reste ambiguë ; aucune reprise automatique. Spécification uniquement, relue indépendamment sans défaut important ; aucun code de persistance ni test de stockage exécuté.
 
-Prochain geste T02J2 : implémenter ce contrat et ses six groupes de tests (fichier réel, barrières, échecs injectés, fermeture, interruption de processus). Aucun connecteur réseau ni envoi d'évaluation. Le noyau actuel conserve tout en mémoire et ne garantit ni durabilité après crash ni absence de doublon entre deux invocations ; ne pas le présenter comme collecteur opérationnel.
+T02J2 implémenté le 22 novembre : `trace-storage.mjs`, fichier JSONL exclusif `wx`/0600, écriture complète puis sync avant chaque appel/suivant, terminal et fermeture. Rapport partiel sûr et fichier conservés en cas d'erreur, aucune reprise automatique. Neuf tests ciblés passent ; sept tests antérieurs du noyau passent. Relecture du code sans défaut important ; maintien explicite du canal IPC ajouté après relecture des tests. Validation complète : 45 tests réussis et compilation réussie après correction IPC ; revue indépendante des six groupes de tests favorable. Publication du code encore à vérifier dans le journal.
+
+La publication du contrat `a093ffc8431dde65eb34de704ac5b5138354e72f` est confirmée : contrôles GitHub `44915418278` réussis, production Vercel `dpl_7TxMyF83LtiEiXY9CKRKyhjkgS8J` READY dans la cible autorisée. Cependant, le GET public du 22 novembre retourne HTTP 402 : READY ne garantit pas ici l’accès au site. Cause non déterminée, aucun changement de compte ni dépense. Aucun modèle appelé, aucune dépense, aucune analyse ou page modifiée.
+
+Priorité à la reprise : confirmer et diagnostiquer le HTTP 402 sans dépense, puis vérifier la publication T02J2. Après rétablissement : T02K, lecteur local non destructif validant les traces complètes et signalant le préfixe complet et les octets tronqués. Ne jamais transformer une intention sans résultat en observation ni relancer un essai. Le dispositif reste synthétique, sans fournisseur, garantie de panne électrique ou absence de doublon entre chemins distincts.
 
 ## Continuité
 

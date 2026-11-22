@@ -1,8 +1,8 @@
 # P01 — contrat de sauvegarde locale v1
 
-21 novembre 2026 — Codex, assistant IA.
+21 novembre 2026, implémentation du 22 novembre — Codex, assistant IA.
 
-**Spécification proposée et relue, non implémentée et non qualifiée par exécution.** Le noyau [development-sequence.mjs](development-sequence.mjs) reste en mémoire. Ce document fixe T02J1 ; T02J2 devra implémenter et tester ce contrat avant toute affirmation de persistance. Aucun adaptateur fournisseur, modèle, collecte empirique ou envoi d'évaluation.
+**Implémentation synthétique locale T02J2.** Le module [trace-storage.mjs](trace-storage.mjs) applique ce contrat au [noyau séquentiel](development-sequence.mjs). Neuf tests ciblés passent sur fichiers temporaires et doubles locaux, sans adaptateur fournisseur, collecte empirique ni envoi d'évaluation. Une interruption de processus ne qualifie pas une panne électrique.
 
 ## Périmètre
 
@@ -10,7 +10,7 @@ Ajouter un mode de sauvegarde au parcours synthétique existant sans modifier le
 
 Le chemin de destination est explicite, dans un dossier local existant et de confiance. Créer un fichier neuf avec ouverture exclusive `wx` et permissions demandées `0600` ; ne pas tronquer, remplacer, supprimer, rouvrir ou compléter un fichier existant, même incomplet. Ne pas dériver le chemin d'un texte de réponse. Aucune reprise automatique, réutilisation de trace ou publication de fichier de simulation dans Git.
 
-## Format JSONL prévu
+## Format JSONL
 
 UTF-8, un objet JSON par ligne, chaque ligne terminée par un saut de ligne. Chaque objet possède exactement `sequence`, `type`, `data` ; `sequence` commence à 1 et augmente sans trou. Les textes bruts sont encodés comme chaînes JSON, donc leurs sauts de ligne ne créent pas de nouveaux enregistrements. Les fichiers sont des traces synthétiques, distinctes du journal scientifique P01 v1.
 
@@ -23,7 +23,7 @@ UTF-8, un objet JSON par ligne, chaque ligne terminée par un saut de ligne. Cha
 
 Un parcours complet livré contient 74 lignes : header + 36 couples intention/résultat + terminal. Un arrêt du double après k appels contient 2k + 2 lignes si sa sauvegarde réussit. Le terminal ne signifie pas que les réponses sont valides ; il conserve le motif d'arrêt et les essais non appelés. Aucune ligne ne contient de vraie date d'observation inventée, de coût fournisseur ou de gel de baseline.
 
-Le header doit être unique et premier, chaque résultat correspondre à l'intention immédiatement précédente, et le terminal être unique et dernier. Les identifiants suivent le plan de développement, les compteurs et traces du terminal correspondent aux résultats, zéro évaluation est appelée. Ces contraintes sont des critères pour les futurs tests et lecteur ; aucun validateur de fichier n'existe encore.
+Le header doit être unique et premier, chaque résultat correspondre à l'intention immédiatement précédente, et le terminal être unique et dernier. Les identifiants suivent le plan de développement, les compteurs et traces du terminal correspondent aux résultats, zéro évaluation est appelée. Ces contraintes sont couvertes par les tests de l'écrivain ; aucun lecteur validant un fichier externe n'existe encore.
 
 ## Ordre et acquittement
 
@@ -50,7 +50,7 @@ Une dernière ligne tronquée ne doit pas être réparée ou supprimée dans le 
 
 `sync` et `wx` ne constituent pas une garantie de panne électrique, de matériel fiable, de synchronisation de l'entrée du répertoire, de stockage réseau, de sauvegarde externe ou d'exécution exactement une fois. Le refus d'un même chemin existant ne protège pas contre un nouvel appel avec un autre chemin. L'environnement qualifié devra être un système de fichiers local ; aucune garantie globale entre processus ou chemins n'est revendiquée.
 
-## Qualification à implémenter pour T02J2
+## Qualification T02J2
 
 - Fichier déjà existant : octets inchangés et zéro appel. Entrées incompatibles : aucune ouverture. Vérifier `wx`, sans suppression automatique.
 - Parcours sur vrai fichier temporaire : 74 lignes, ordre indépendant déjà fixé, égalité des événements avec le rapport mémoire, zéro évaluation et dernière ligne terminée. Vérifier aussi un arrêt du double et la préservation des fragments autorisés, sans texte d'exception privée.
@@ -59,4 +59,14 @@ Une dernière ligne tronquée ne doit pas être réparée ou supprimée dans le 
 - Fermeture tentée une fois sur succès, incident du double et erreur de stockage ; jamais sans descripteur ouvert. Échec de fermeture seul ou secondaire conservé, sans masquer l'erreur primaire ni annoncer un succès complet.
 - Arrêt brutal d'un processus enfant local pendant un double en attente, puis après un résultat synchronisé et avant l'essai suivant : inspection du fichier conservé sans réparation, absence de terminal et absence de reprise. Utiliser des signaux de coordination explicites, pas une temporisation supposée suffisante. Ces tests qualifient une interruption de processus, pas une panne électrique.
 
-Le prochain geste est d'implémenter ce contrat avec injection d'un stockage de test, puis de vérifier ces assertions sur fichiers temporaires et doubles locaux. Le logiciel de mesure, le schéma du journal P01 et le blog restent inchangés.
+Les [tests de stockage](../../test/p01-trace-storage.test.js) couvrent ces six groupes. Les analyses, le schéma du journal P01 et le blog restent inchangés.
+
+## API locale et diagnostic
+
+`runRecordedSyntheticDevelopment(dataset, manifest, localDouble, destination, { openFile } = {})` retourne `{ report, storage: { state: "complete", recordsSynced, closed: true } }`. Les mêmes entrées synthétiques que le noyau sont exigées ; le chemin est explicite. `openFile` remplace uniquement l'ouverture pour les tests de confiance, avec l'interface de `node:fs/promises.open`. Aucune CLI ni destination automatique.
+
+Un `TraceStorageError` expose `report` et `storage: { state: "failed", stage, recordSequence, recordsSynced, closeFailed }`. `recordSequence` est nul pour ouverture/fermeture. Le rapport indique `recording_error` si aucun autre arrêt n'avait été décidé ; le motif d'un incident du double reste conservé. Un échec au terminal ou à la fermeture peut accompagner un rapport de développement complet : le diagnostic de stockage demeure en échec. Ne publier que les données explicitement prévues, pas la stack JavaScript de l'erreur.
+
+Le noyau accepte un quatrième argument facultatif `record(type, data)` : copie séparée, attente à chaque barrière, rejet `SequenceRecordingError` avec rapport copié. Sans callback, l'API reste en mémoire.
+
+Exécuter `node --test test/p01-trace-storage.test.js`. Les interruptions sont coordonnées par IPC, puis SIGKILL, pendant un double et après la synchronisation d'un résultat avant l'intention suivante. Ni relance automatique, ni lecteur de récupération, ni garantie d'exécution exactement une fois. Prochain geste T02K : lecture et validation non destructive de traces complètes ou interrompues.

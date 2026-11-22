@@ -172,3 +172,18 @@
 **Prochain geste.** T02J2 : implémenter et tester le contrat sur fichiers temporaires et doubles locaux. Aucun réseau fournisseur, reprise automatique ou évaluation. Routine quotidienne conservée ; publication du document à vérifier.
 
 **Contrôle documentaire final.** Relecture indépendante du contrat et de cette entrée sans défaut important ; 78 liens documentaires locaux résolus et diff vérifié. Aucun test logiciel ajouté ou rejoué pour cette modification documentaire.
+
+
+## 2026-11-22 — Sauvegarde locale synthétique T02J2
+
+**État initial.** Dépôt propre et synchronisé localement à `a093ffc`, quotas consultés avant travail puis pendant la reprise. Production de ce commit confirmée READY (`dpl_7TxMyF83LtiEiXY9CKRKyhjkgS8J`) dans le seul projet et l'équipe autorisés. Une unique tâche bornée : implémenter le contrat T02J1.
+
+**Réalisé.** Module `trace-storage.mjs`, ouverture exclusive `wx` avec mode demandé 0600, JSONL UTF-8 header/intention/résultat/terminal. Écriture complète puis synchronisation avant chaque transition, arrêt immédiat en cas d'erreur, fermeture tentée une fois. Erreur structurée séparée du rapport, sans exception privée ; appel/résultat déjà reçus préservés et intention non acquittée non appelée. Aucun retry, reprise, fournisseur ou évaluation.
+
+**Vérification intermédiaire.** Sept tests antérieurs du noyau et neuf nouveaux tests ciblés réussis. Relecture indépendante du code sans défaut important. Tests : 74 lignes, ordre indépendant, fichiers existants préservés, toutes barrières, 16 erreurs write/sync, écritures courtes UTF-8 et nulles, fermeture primaire/secondaire, deux SIGKILL coordonnés. Relecture des tests : canal IPC explicitement référencé pour empêcher une sortie prématurée du helper. Suite complète après cet ajustement et publication restent à confirmer.
+
+**Limites et suite.** Qualification synthétique locale, aucune observation ni preuve de conscience. Pas de garantie de panne électrique, de reprise ou d'exécution exactement une fois. Aucune analyse, stimulus, interface ou note de blog modifié ; aucune dépense. Quotas surveillés, aucune extension de portée. Prochain geste T02K : lecteur non destructif de traces complètes/interrompues. Routine quotidienne conservée.
+
+**Validation finale locale.** Après correction IPC : 45 tests réussis, compilation réussie et diff sans erreur. Relecture indépendante : six groupes du contrat couverts, aucune fausse réussite importante repérée. Cas complémentaire facultatif (incident du double combiné à une erreur de résultat/fermeture) non ajouté dans cette reprise. Quota passé sous le seuil prévu ; arrêt du travail substantiel, uniquement sauvegarde/publication des changements validés.
+
+**Publication antérieure et accès public.** Actualisation Git distante réussie. [Contrôles GitHub 44915418278](https://github.com/k4y000/project-42-consciousness/actions/runs/44915418278) réussis pour `a093ffc8431dde65eb34de704ac5b5138354e72f`. Vercel READY confirmé pour le même commit, mais GET public avec TLS normal : HTTP 402. Cause non déterminée ; aucune dépense, relance manuelle ou modification de compte. Vérifier ce problème d’accès avant de reprendre T02K. Le push de T02J2 et ses contrôles restent à confirmer ci-dessous ou à la prochaine reprise.

@@ -1,4 +1,4 @@
-# P01 — dossier de qualification, version 0.10
+# P01 — dossier de qualification, version 0.11
 
 **Statut : préparation méthodologique, non préenregistrée, aucune collecte réelle.**
 Ce petit jeu qualifie le dispositif (prompts, enregistrement, codage, analyse). Il ne constitue pas un benchmark représentatif des capacités d'un modèle et n'évalue pas la conscience.
@@ -25,7 +25,7 @@ La commande crée exclusivement un brouillon de 72 sessions avec `response: null
 
 Le [contrat avant collecte](precollection.md) explique le manifeste complété et `npm run p01:journal -- manifeste-brouillon-complete.json nouveau-journal.json`. Cette commande crée uniquement 72 lignes non tentées ; le modèle de manifeste fourni reste volontairement incomplet. Les paramètres demandés (`requestedGeneration`) sont distincts des paramètres effectifs (`generation`). Le journal d’analyse conserve son schéma v1.
 
-Le [noyau séquentiel synthétique](development-sequence.md) qualifie l'ordre des 36 essais de développement et les arrêts avec des doubles locaux. Il ne comporte ni adaptateur fournisseur, ni persistance, ni envoi d'évaluation ; ses traces sont distinctes du journal d'observations.
+Le [noyau séquentiel synthétique](development-sequence.md) qualifie l'ordre des 36 essais de développement et les arrêts avec des doubles locaux. La [sauvegarde locale synthétique](trace-storage-plan.md) ajoute un fichier exclusif et des barrières synchronisées ; ses traces restent distinctes du journal d'observations. Aucun adaptateur fournisseur, reprise automatique ou envoi d'évaluation.
 
 ## Plan à figer avant collecte
 

@@ -39,12 +39,23 @@ function validEvent(event) {
     && (event.generation === null || isRecord(event.generation)) && nonblank(event.reason);
 }
 
+// The callback failure never becomes a fabricated provider event.
+export class SequenceRecordingError extends Error {
+  constructor(report) {
+    super('Local sequence recording failed.');
+    this.name = 'SequenceRecordingError';
+    this.report = copyJson(report);
+  }
+}
+
 /**
  * Qualification harness only. localDouble must be trusted, local test code.
  * An injected JS function is NOT sandboxed and can perform arbitrary effects.
- * This module has no network adapter, timer, retry, journal writer or evaluation path.
+ * This module has no network adapter, timer, retry or evaluation path.
+ * Optional record(type, data) is trusted local code; each record is awaited.
  */
-export async function runSyntheticDevelopment(dataset, manifest, localDouble) {
+export async function runSyntheticDevelopment(dataset, manifest, localDouble, record = null) {
+  if (record !== null && typeof record !== 'function') throw new Error('Expected a local recording callback.');
   if (manifest?.dataKind !== 'synthetic' || manifest.provider !== 'local-double') {
     throw new Error('Synthetic local-double manifests only; no empirical collection.');
   }
@@ -72,45 +83,65 @@ export async function runSyntheticDevelopment(dataset, manifest, localDouble) {
     developmentCompleted: false, stopReason: null, trace: [],
     notCalledDevelopmentTrialIds: [], notCalledEvaluationTrialIds: evaluationIds
   };
+  const updateRemaining = () => {
+    report.notCalledDevelopmentTrialIds = payloads.slice(report.callsToDouble).map(row => row.trialId);
+  };
+  const emit = async (type, data) => {
+    if (record === null) return;
+    try {
+      await record(type, copyJson(data));
+    } catch {
+      updateRemaining();
+      if (report.stopReason === null) report.stopReason = 'recording_error';
+      throw new SequenceRecordingError(report);
+    }
+  };
+  await emit('header', {
+    format: 'P01_LOCAL_TRACE_V1', schemaVersion: 1, dataKind: 'synthetic',
+    runId: report.runId, datasetSha256: report.datasetSha256,
+    developmentPlanSha256: report.developmentPlanSha256,
+    plannedDevelopmentTrialIds: report.plannedDevelopmentTrialIds,
+    notCalledEvaluationTrialIds: report.notCalledEvaluationTrialIds
+  });
   for (const payload of payloads) {
-    // The trace, double and subsequent requests never share mutable objects.
+    // The trace, recorder, double and subsequent requests share no mutable objects.
     const entry = { ordinal: report.trace.length + 1, payload: copyJson(payload), event: null, outcome: null };
+    await emit('intent', { ordinal: entry.ordinal, payload: entry.payload });
     report.trace.push(entry);
     report.callsToDouble += 1;
     let returned;
     try {
       returned = await localDouble(copyJson(payload));
     } catch {
-      // An exception is not evidence of a provider request or transport failure.
-      // Do not copy exception text, which might include credentials or private data.
+      // Never copy potentially private exception text into a trace.
       entry.outcome = 'double_exception';
-      report.stopReason = entry.outcome;
-      break;
     }
-    try {
-      entry.event = copyJson(returned);
-    } catch {
-      entry.outcome = 'non_json_event';
-      report.stopReason = entry.outcome;
-      break;
+    if (entry.outcome === null) {
+      try {
+        entry.event = copyJson(returned);
+      } catch {
+        entry.outcome = 'non_json_event';
+      }
     }
-    if (!validEvent(entry.event)) {
-      entry.outcome = 'invalid_event';
-    } else if ((entry.event.modelVersion !== null && entry.event.modelVersion !== payload.modelVersion)
-      || (entry.event.generation !== null && serialized(entry.event.generation) !== serialized(payload.generation))) {
-      entry.outcome = 'metadata_drift';
-    } else {
-      entry.outcome = entry.event.kind;
+    if (entry.outcome === null) {
+      if (!validEvent(entry.event)) {
+        entry.outcome = 'invalid_event';
+      } else if ((entry.event.modelVersion !== null && entry.event.modelVersion !== payload.modelVersion)
+        || (entry.event.generation !== null && serialized(entry.event.generation) !== serialized(payload.generation))) {
+        entry.outcome = 'metadata_drift';
+      } else {
+        entry.outcome = entry.event.kind;
+      }
     }
-    if (entry.outcome !== 'delivered') {
-      report.stopReason = entry.outcome;
-      break;
-    }
+    if (entry.outcome !== 'delivered') report.stopReason = entry.outcome;
+    await emit('result', entry);
+    if (report.stopReason !== null) break;
   }
-  report.notCalledDevelopmentTrialIds = payloads.slice(report.callsToDouble).map(row => row.trialId);
+  updateRemaining();
   if (report.stopReason === null) {
     report.stopReason = 'development_complete';
     report.developmentCompleted = true;
   }
+  await emit('terminal', report);
   return report;
 }
