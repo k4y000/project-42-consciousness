@@ -42,9 +42,9 @@ Objectif : permettre une collecte future contrôlée, sans inventer de données 
 
 **T02I terminé et publié le 18 novembre 2026.** Noyau synthétique séquentiel limité aux 36 essais de développement, événements et incidents distincts, aucun retry/gel/envoi d'évaluation. Sept tests ciblés, 36 tests complets et compilation réussis ; ordre relu indépendamment, deux frontières non JSON corrigées. Aucun adaptateur fournisseur, timer réel ou persistance ; aucun modèle appelé. Contrôles GitHub réussis et production Vercel READY au commit `a9a6af3` ; preuves dans le journal.
 
-**T02J — implémenté et validé localement, publication à confirmer.** T02J1 fixe le [contrat de sauvegarde locale](../research/p01/trace-storage-plan.md) ; T02J2 l'implémente avec neuf tests ciblés réussis, incluant barrières, erreurs, fichiers partiels et deux interruptions SIGKILL. 45 tests et compilation réussis ; relectures du code et des six groupes de tests favorables après correction du maintien du canal IPC. Aucune reprise automatique, aucun fournisseur ou envoi d'évaluation ; limites de durabilité conservées.
+**T02J — terminé et publié sur GitHub, déploiement public non confirmé.** T02J1 fixe le [contrat de sauvegarde locale](../research/p01/trace-storage-plan.md) ; T02J2 l'implémente avec neuf tests ciblés réussis, incluant barrières, erreurs, fichiers partiels et deux interruptions SIGKILL. 45 tests et compilation réussis ; relectures du code et des six groupes de tests favorables après correction du maintien du canal IPC. Aucune reprise automatique, aucun fournisseur ou envoi d'évaluation ; limites de durabilité conservées.
 
-**Priorité de publication.** GET public HTTP 402 le 22 novembre malgré production READY ; vérifier la cause sans changement de compte ni dépense. Confirmer ensuite la publication T02J2.
+**Priorité de publication.** GET public HTTP 402 (`Payment required` / `DEPLOYMENT_DISABLED`) le 22 novembre malgré ancienne production READY ; accès Vercel à rétablir sans dépense automatique. Confirmer ensuite la publication T02J2.
 
 **T02K — prochain geste après rétablissement/publication de T02J2.** Implémenter un lecteur local non destructif : valider ordre et contenu, signaler un préfixe complet et les octets tronqués sans réparation, recodage empirique ni relance. Aucun réseau ni appel de modèle.
 
