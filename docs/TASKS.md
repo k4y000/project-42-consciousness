@@ -44,9 +44,9 @@ Objectif : permettre une collecte future contrôlée, sans inventer de données 
 
 **T02J — terminé et publié sur GitHub, déploiement public non confirmé.** T02J1 fixe le [contrat de sauvegarde locale](../research/p01/trace-storage-plan.md) ; T02J2 l'implémente avec neuf tests ciblés réussis, incluant barrières, erreurs, fichiers partiels et deux interruptions SIGKILL. 45 tests et compilation réussis ; relectures du code et des six groupes de tests favorables après correction du maintien du canal IPC. Aucune reprise automatique, aucun fournisseur ou envoi d'évaluation ; limites de durabilité conservées.
 
-**Priorité de publication.** GET public HTTP 402 (`Payment required` / `DEPLOYMENT_DISABLED`) le 22 novembre malgré ancienne production READY ; accès Vercel à rétablir sans dépense automatique. Confirmer ensuite la publication T02J2.
+**Priorité de publication.** GET public HTTP 402 (`Payment required` / `DEPLOYMENT_DISABLED`) le 22 novembre malgré ancienne production READY ; accès Vercel à rétablir sans dépense automatique. Confirmer la publication T02J2 lorsque l'accès sera rétabli. Le contrôle du 23 novembre confirme les contrôles GitHub du point de reprise, mais aucun déploiement du commit source n'est retourné. Éviter de répéter un diagnostic déjà signalé ; ce blocage ne suspend pas T02K hors ligne.
 
-**T02K — prochain geste après rétablissement/publication de T02J2.** Implémenter un lecteur local non destructif : valider ordre et contenu, signaler un préfixe complet et les octets tronqués sans réparation, recodage empirique ni relance. Aucun réseau ni appel de modèle.
+**T02K — prochaine tâche hors ligne, indépendante de l'hébergement (ordre précisé le 23 novembre).** Implémenter un lecteur local non destructif : valider ordre et contenu, signaler un préfixe complet et les octets tronqués sans réparation, recodage empirique ni relance. Aucun réseau ni appel de modèle.
 
 **Publication rétablie le 17 novembre.** Le blocage de T02H décrit ci-dessus était dû à la pause du projet. T01R a rétabli l'accès public et vérifié un nouveau déploiement incluant T02H ; les anciens déploiements conservent leur historique `BLOCKED`.
 

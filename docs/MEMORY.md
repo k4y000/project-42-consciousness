@@ -1,6 +1,6 @@
 # Mémoire de reprise
 
-Dernière mise à jour : 22 novembre 2026. Ce document décrit des faits datés ; confirmer l'état distant avant d'agir.
+Dernière mise à jour : 23 novembre 2026. Ce document décrit des faits datés ; confirmer l'état distant avant d'agir.
 
 ## Intention et décisions
 
@@ -80,7 +80,9 @@ T02J2 implémenté le 22 novembre : `trace-storage.mjs`, fichier JSONL exclusif 
 
 La publication du contrat `a093ffc8431dde65eb34de704ac5b5138354e72f` est confirmée : contrôles GitHub `44915418278` réussis, production Vercel `dpl_7TxMyF83LtiEiXY9CKRKyhjkgS8J` READY dans la cible autorisée. Cependant, le GET public du 22 novembre retourne HTTP 402 : READY ne garantit pas ici l’accès au site. Réponse publique : `Payment required` / `DEPLOYMENT_DISABLED`. Aucun changement de compte ni dépense ; intervention sur le compte à examiner par le propriétaire. Aucun modèle appelé, aucune dépense, aucune analyse ou page modifiée.
 
-Priorité à la reprise : confirmer et diagnostiquer le HTTP 402 sans dépense, puis vérifier la publication T02J2. Après rétablissement : T02K, lecteur local non destructif validant les traces complètes et signalant le préfixe complet et les octets tronqués. Ne jamais transformer une intention sans résultat en observation ni relancer un essai. Le dispositif reste synthétique, sans fournisseur, garantie de panne électrique ou absence de doublon entre chemins distincts.
+Contrôle du 23 novembre : commit de mémoire `3cf171f8b06c5da2a3a063dbb0044bcb6d55a669` présent sur `origin/main`, contrôles GitHub `45002350250` réussis. Le HTTP 402 a déjà été confirmé et signalé au propriétaire dans ce chat aujourd'hui ; la recherche Vercel du commit source `959f475` ne retourne toujours aucun déploiement. Aucun nouveau diagnostic de facturation ni rétablissement revendiqué.
+
+Prochain geste : bref contrôle de publication, puis T02K hors ligne même si l'hébergement reste indisponible. Le lecteur local de traces synthétiques ne dépend pas du site ; cet ordre est précisé après relecture indépendante pour éviter que le blocage d'hébergement arrête le travail local. Valider structure et séquence, signaler le préfixe complet et les octets tronqués sans modification du fichier. Ne jamais transformer une intention sans résultat en observation ni relancer un essai. Publication T02J2 toujours non confirmée ; aucune dépense autorisée par cette décision.
 
 ## Continuité
 
